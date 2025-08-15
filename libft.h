@@ -6,7 +6,7 @@
 /*   By: aalkaff <aalkaff@student.42abudhabi.ae>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/15 21:47:55 by aalkaff           #+#    #+#             */
-/*   Updated: 2025/08/15 23:25:56 by aalkaff          ###   ########.fr       */
+/*   Updated: 2025/08/15 23:38:44 by aalkaff          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -255,10 +255,28 @@ char	*ft_strnstr(const char *haystack, const char *needle, size_t n);
  */
 int		ft_atoi(const char *nptr);
 
-// TODO: document this
-void	*ft_calloc(size_t nmemb, size_t count);
+/**
+ * @brief Allocates an array on the heap and initializes it to 0.
+ *
+ * @param nmemb The number of elements in the array.
+ * @param size The size of each individual element in bytes.
+ *
+ * @return The new zeroed array.
+ *
+ * @note This function internally calls `malloc`.
+ */
+void	*ft_calloc(size_t nmemb, size_t size);
 
-// TODO: document this
+/**
+ * @brief Allocates and returns a duplicate of a string.
+ *
+ * @param s The string to copy, a null-terminated C string.
+ *
+ * @return The new duplicate.
+ * @retval NULL – The allocation failed.
+ *
+ * @note This function internally calls `malloc`.
+ */
 char	*ft_strdup(const char *s);
 
 #endif
