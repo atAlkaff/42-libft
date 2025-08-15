@@ -6,7 +6,7 @@
 /*   By: aalkaff <aalkaff@student.42abudhabi.ae>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/15 21:47:55 by aalkaff           #+#    #+#             */
-/*   Updated: 2025/08/15 23:38:44 by aalkaff          ###   ########.fr       */
+/*   Updated: 2025/08/15 23:45:09 by aalkaff          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -147,7 +147,18 @@ void	*ft_memmove(void *dest, const void *src, size_t n);
  */
 size_t	ft_strlcpy(char *dest, const char *src, size_t dsize);
 
-// TODO: document this
+/**
+ * @brief Concatenates `src` to `dest` up to a total of `dsize - 1`
+ * characters. Returns the length of the string it attempted to create.
+ *
+ * @param dest The destination string, a null-terminated C string and
+ * writable buffer of at least `dsize` bytes.
+ * @param src The source string, a null-terminated C string.
+ * @param dsize The maximum number of characters to copy.
+ *
+ * @return The length of `src` plus the greater of `dsize` and the
+ * length of `dest`.
+ */
 size_t	ft_strlcat(char *dest, const char *src, size_t dsize);
 
 /**
