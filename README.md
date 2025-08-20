@@ -5,6 +5,9 @@
 All character and string functions run on the default C locale
 (POSIX), regardless of what the current machine locale is.
 
+All pointer arguments must be valid pointers. All string arguments
+must be null-terminated C strings.
+
 ### 1. ctype functions
 
 All ctype functions are defined only for values representable as
