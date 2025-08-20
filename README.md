@@ -84,3 +84,16 @@ returns `(int)LONG_MAX`. If `nptr` represents a number less than
 This function is O(n) and pure.
 
 This function is thread-safe.
+
+```C
+char	*ft_itoa(int n)
+```
+
+This function returns the string representation of `n`.
+
+This function internally calls `malloc()`. If `malloc` fails, this
+function returns `NULL`.
+
+This function is O(n).
+
+This function is thread-safe.
