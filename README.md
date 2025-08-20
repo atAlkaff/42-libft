@@ -98,3 +98,44 @@ function returns `NULL`.
 This function is O(n).
 
 This function is thread-safe.
+
+### 3. string functions
+
+#### 3.1. Copying Functions
+
+For all copying functions, `dest` is an `n`-byte writable buffer
+and `src` is an `n`-byte buffer. If the function expects `src` to
+be a string, `n` is capped at the length of `src`.
+
+All copying functions are O(n).
+
+All copying functions are thread-safe.
+
+```C
+void	*ft_memcpy(void *dest, const void *src, size_t n);
+```
+
+This function assumes `dest` and `src` do not overlap.
+
+This function returns `dest`.
+
+```C
+void	*ft_memmove(void *dest, const void *src, size_t n);
+```
+
+This function handles overlapping `dest` and `src`. For
+non-overlapping regions, the behavior is the same as `ft_memcpy`
+and `ft_memcpy` should be used instead.
+
+This function returns `dest`.
+
+```C
+size_t	ft_strlcpy(char *dest, const char *src, size_t n);
+```
+
+This function copies up to `n` bytes or until a null terminating
+character is found in `src`.
+
+This function returns the length of `src`.
+
+
