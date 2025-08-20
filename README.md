@@ -54,6 +54,12 @@ be successfully passed to `free()`.
 If `nmemb * size` is greater than `SIZE_MAX`, or if the allocation
 fails, this function returns `NULL`.
 
+This function is O(1) in most cases, but may be O(log n) or O(n) in
+the worst case depending on how `malloc` is implemented on the user's
+machine.
+
+This function is thread-safe.
+
 ```C
 void	*ft_calloc(size_t nmemb, size_t size);
 ```
