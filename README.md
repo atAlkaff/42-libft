@@ -16,6 +16,9 @@ All ctype functions are thread-safe.
 
 #### 1.1. Checkers
 
+These functions return 1 if `c` is a member of the function's target
+group (e.g. digits for `ft_isdigit`) or 0 otherwise.
+
 ```C
 int	ft_isalpha(int c);
 int	ft_isdigit(int c);
@@ -25,6 +28,9 @@ int	ft_isdigit(int c);
 ```
 
 #### 1.2. Converters
+
+These functions return the upper/lowercase equivalent of `c` if one
+exists, or `c` otherwise.
 
 ```C
 int	ft_toupper(int c);
