@@ -4,6 +4,16 @@
 
 ### 1. ctype functions
 
+All ctype functions run on the default C locale (POSIX), regardless
+of what the current machine locale is.
+
+All ctype functions are defined only for values representable as
+`unsigned char` (that is, [0, 255]) and for `EOF` (-1).
+
+All ctype functions are O(1) pure functions with no side effects.
+
+All ctype functions are thread-safe.
+
 #### 1.1. Checkers
 
 ```C
