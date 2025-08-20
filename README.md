@@ -67,3 +67,16 @@ This function is thread-safe.
 
 #### 2.2. Integer/String Converters
 
+```C
+int	ft_atoi(const char *nptr);
+```
+
+This function returns the number represented by `nptr`. The function
+skips leading whitespace characters and handles one optional + or -
+sign, then reads until it reaches the first non-digit character.
+
+If `nptr` is not a number, this function returns 0.
+
+If `nptr` represents a number greater than `LONG_MAX`, the function
+returns `(int)LONG_MAX`. If `nptr` represents a number less than
+`LONG_MIN`, the function returns `(int)LONG_MIN`.
