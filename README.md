@@ -80,3 +80,7 @@ If `nptr` is not a number, this function returns 0.
 If `nptr` represents a number greater than `LONG_MAX`, the function
 returns `(int)LONG_MAX`. If `nptr` represents a number less than
 `LONG_MIN`, the function returns `(int)LONG_MIN`.
+
+This function is O(n) and pure.
+
+This function is thread-safe.
