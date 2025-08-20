@@ -1,6 +1,6 @@
 # 42-libft
 
-## Part 1 Functions
+## Functions
 
 ### 1. ctype functions
 
@@ -36,3 +36,26 @@ exists, or `c` otherwise.
 int	ft_toupper(int c);
 int	ft_tolower(int c);
 ```
+
+### 2. stdlib functions
+
+#### 2.1. Memory Allocators
+
+##### 2.1.1. ft_calloc
+
+This function allocates and returns a heap-allocated array of `nmemb`
+elements of size `size` each. The entire memory chunk is zeroed.
+
+This function internally calls `malloc()`.
+
+If `nmemb * size` is 0, the function returns a unique pointer that can
+be successfully passed to `free()`.
+
+If `nmemb * size` is greater than `SIZE_MAX`, or if the allocation
+fails, this function returns `NULL`.
+
+```C
+void	*ft_calloc(size_t nmemb, size_t size);
+```
+
+#### 2.2. Integer/String Converters
