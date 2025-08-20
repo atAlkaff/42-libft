@@ -41,7 +41,9 @@ int	ft_tolower(int c);
 
 #### 2.1. Memory Allocators
 
-##### 2.1.1. ft_calloc
+```C
+void	*ft_calloc(size_t nmemb, size_t size);
+```
 
 This function allocates and returns a heap-allocated array of `nmemb`
 elements of size `size` each. The entire memory chunk is zeroed.
@@ -60,8 +62,5 @@ machine.
 
 This function is thread-safe.
 
-```C
-void	*ft_calloc(size_t nmemb, size_t size);
-```
-
 #### 2.2. Integer/String Converters
+
