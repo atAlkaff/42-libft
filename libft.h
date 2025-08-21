@@ -6,7 +6,7 @@
 /*   By: aalkaff <aalkaff@student.42abudhabi.ae>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/15 21:47:55 by aalkaff           #+#    #+#             */
-/*   Updated: 2025/08/21 19:38:51 by aalkaff          ###   ########.fr       */
+/*   Updated: 2025/08/21 20:34:44 by aalkaff          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,10 +21,24 @@
 
 /**
  * For all libft functions, the caller is responsible for passing
- * valid input. If any libft function is called with invalid input,
- * the behavior is undefined. This mirrors other implementations of
- * libc and adjacent libraries. See ISO 9899:1999 ("C99 Standard")
- * Section 7.1.4 ("Use of Library Functions").
+ * valid input. If any libft function is called with invalid input
+ * (a value outside the function's domain, a pointer to invalid memory
+ * a null pointer unless otherwise specified, or a buffer that is too
+ * small), the behavior is undefined. This mirrors other
+ * implementations of libc and adjacent libraries. See ISO 9899:1999
+ * ("C99 Standard") Section 7.1.4 ("Use of library functions").
+ *
+ * For all libft purposes, a "string" is a null-terminated character
+ * array (a "C string"). See C99 Standard Section 7.1.1 ("Definitions
+ * of terms").
+ *
+ * Any function parameter of type `const char *` is a string. Any
+ * parameter or return value of type `char *` will be a string after
+ * a successful function call.
+ *
+ * Libft functions do not support locales. All libft functions run on
+ * the default "C locale" or "POSIX locale" regardless of what the
+ * current machine locale is.
  */
 
 /**
