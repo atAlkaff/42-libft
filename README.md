@@ -133,7 +133,7 @@ This function returns `dest`.
 size_t	ft_strlcpy(char *dest, const char *src, size_t n);
 ```
 
-This function copies up to `n` bytes or until a null terminating
+This function copies up to `n - 1` bytes or until a null terminating
 character is found in `src`.
 
 This function returns the length of `src`.
