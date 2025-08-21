@@ -6,7 +6,7 @@
 /*   By: aalkaff <aalkaff@student.42abudhabi.ae>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/15 21:47:55 by aalkaff           #+#    #+#             */
-/*   Updated: 2025/08/21 22:24:13 by aalkaff          ###   ########.fr       */
+/*   Updated: 2025/08/21 22:43:33 by aalkaff          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,8 @@ typedef struct s_list
 
 /**
  * @mainpage
+ *
+ * ## Caller Responsibility
  * For all libft functions, the caller is responsible for passing
  * valid input. If any libft function is called with invalid input
  * (such as a value outside the function's domain, a pointer to
@@ -35,21 +37,19 @@ typedef struct s_list
  * libc and adjacent libraries. See ISO 9899:1999 ("C99 Standard")
  * Section 7.1.4 ("Use of library functions").
  *
+ * ## Definition of string
  * For all libft purposes, a "string" is a null-terminated character
  * array (a "C string"). See C99 Standard Section 7.1.1 ("Definitions
  * of terms").
  *
- * Any function parameter of type `const char *` is a string.
- * Any function parameter of type `char *` is a string unless
- * otherwise specified.
- *
+ * ## Locale
  * Libft functions do not support locales. All libft functions run on
  * the default "C locale" or "POSIX locale" regardless of what the
  * current machine locale is.
  */
 
 /**
- * @defgroup ctype Character classification and conversion
+ * @defgroup ctype Character classification and conversion functions
  */
 
 /**
@@ -66,8 +66,8 @@ typedef struct s_list
  * @retval 1 – `c` is alphabetical.
  * @retval 0 – `c` is not alphabetical.
  *
- * @pre `c` is a value representable as `unsigned char` [0, 255]
- * or `EOF` (-1).
+ * @pre `c` is a value representable as `unsigned char` or `EOF`,
+ * that is, @f$ c \in [-1, 255] @f$.
  */
 int		ft_isalpha(int c);
 
@@ -80,8 +80,8 @@ int		ft_isalpha(int c);
  * @retval 1 – `c` is a digit.
  * @retval 0 – `c` is not a digit.
  *
- * @pre `c` is a value representable as `unsigned char` [0, 255]
- * or `EOF` (-1).
+ * @pre `c` is a value representable as `unsigned char` or `EOF`,
+ * that is, @f$ c \in [-1, 255] @f$.
  */
 int		ft_isdigit(int c);
 
@@ -94,8 +94,8 @@ int		ft_isdigit(int c);
  * @retval 1 – `c` is alphanumeric.
  * @retval 0 – `c` is not alphanumeric.
  *
- * @pre `c` is a value representable as `unsigned char` [0, 255]
- * or `EOF` (-1).
+ * @pre `c` is a value representable as `unsigned char` or `EOF`,
+ * that is, @f$ c \in [-1, 255] @f$.
  */
 int		ft_isalnum(int c);
 
@@ -109,8 +109,8 @@ int		ft_isalnum(int c);
  * @retval 1 – `c` is ASCII.
  * @retval 0 – `c` is not ASCII.
  *
- * @pre `c` is a value representable as `unsigned char` [0, 255]
- * or `EOF` (-1).
+ * @pre `c` is a value representable as `unsigned char` or `EOF`,
+ * that is, @f$ c \in [-1, 255] @f$.
  */
 int		ft_isascii(int c);
 
@@ -123,8 +123,8 @@ int		ft_isascii(int c);
  * @retval 1 – `c` is printable.
  * @retval 0 – `c` is not printable.
  *
- * @pre `c` is a value representable as `unsigned char` [0, 255]
- * or `EOF` (-1).
+ * @pre `c` is a value representable as `unsigned char` or `EOF`,
+ * that is, @f$ c \in [-1, 255] @f$.
  */
 int		ft_isprint(int c);
 
@@ -142,8 +142,8 @@ int		ft_isprint(int c);
  * @return The uppercase equivalent of `c` if one exists, or
  * `c` otherwise.
  *
- * @pre `c` is a value representable as `unsigned char` [0, 255]
- * or `EOF` (-1).
+ * @pre `c` is a value representable as `unsigned char` or `EOF`,
+ * that is, @f$ c \in [-1, 255] @f$.
  */
 int		ft_toupper(int c);
 
@@ -156,8 +156,8 @@ int		ft_toupper(int c);
  * @return The lowercase equivalent of `c` if one exists, or
  * `c` otherwise.
  *
- * @pre `c` is a value representable as `unsigned char` [0, 255]
- * or `EOF` (-1).
+ * @pre `c` is a value representable as `unsigned char` or `EOF`,
+ * that is, @f$ c \in [-1, 255] @f$.
  */
 int		ft_tolower(int c);
 
