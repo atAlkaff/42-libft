@@ -6,7 +6,7 @@
 /*   By: aalkaff <aalkaff@student.42abudhabi.ae>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/15 21:47:55 by aalkaff           #+#    #+#             */
-/*   Updated: 2025/08/15 23:45:09 by aalkaff          ###   ########.fr       */
+/*   Updated: 2025/08/21 19:35:25 by aalkaff          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,13 +57,13 @@ int		ft_isdigit(int c);
 int		ft_isalnum(int c);
 
 /**
- * @brief Checks if a character is ASCII.
+ * @brief Checks if a character is in the ASCII character set [0, 127].
  *
  * @param c The character to test.
  *
  * @return Whether `c` is an ASCII code [0, 127].
  * @retval 1 – `c` is an ASCII code.
- * @retval 0 – `c` is not an ASCII code..
+ * @retval 0 – `c` is not an ASCII code.
  */
 int		ft_isascii(int c);
 
