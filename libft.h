@@ -6,7 +6,7 @@
 /*   By: aalkaff <aalkaff@student.42abudhabi.ae>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/15 21:47:55 by aalkaff           #+#    #+#             */
-/*   Updated: 2025/08/21 20:34:44 by aalkaff          ###   ########.fr       */
+/*   Updated: 2025/08/21 20:38:46 by aalkaff          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,8 +23,9 @@
  * For all libft functions, the caller is responsible for passing
  * valid input. If any libft function is called with invalid input
  * (a value outside the function's domain, a pointer to invalid memory
- * a null pointer unless otherwise specified, or a buffer that is too
- * small), the behavior is undefined. This mirrors other
+ * a null pointer unless otherwise specified, a buffer that is too
+ * small, or a pointer to non-modifiable storage when the parameter is
+ * not const qualified), the behavior is undefined. This mirrors other
  * implementations of libc and adjacent libraries. See ISO 9899:1999
  * ("C99 Standard") Section 7.1.4 ("Use of library functions").
  *
