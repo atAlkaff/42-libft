@@ -138,4 +138,16 @@ character is found in `src`.
 
 This function returns the length of `src`.
 
+#### 3.2. Concatenation Functions
 
+```C
+size_t	ft_strlcat(char *dest, const char *src, size_t n);
+```
+
+This function attempts to concatenate `src` to `dest` up to a
+total of `n - 1` bytes.
+
+On success, the function returns `ft_strlen(src) + ft_strlen(dest)`.
+
+If `dest` is shorter than `n` bytes, the function does nothing
+and returns `n + ft_strlen(src)`.
