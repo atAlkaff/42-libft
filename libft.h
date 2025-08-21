@@ -6,7 +6,7 @@
 /*   By: aalkaff <aalkaff@student.42abudhabi.ae>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/15 21:47:55 by aalkaff           #+#    #+#             */
-/*   Updated: 2025/08/21 21:24:23 by aalkaff          ###   ########.fr       */
+/*   Updated: 2025/08/21 22:18:12 by aalkaff          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,19 +47,118 @@ typedef struct s_list
  * current machine locale is.
  */
 
-// Ctype Functions
+/**
+ * @defgroup ctype Character classification and conversion
+ */
 
-// Boolean
+/**
+ * @defgroup ctype_class Classification functions
+ * @ingroup ctype
+ */
 
+/**
+ * @ingroup ctype_class
+ * @brief Checks if a character is alphabetical.
+ *
+ * @param c The character to test.
+ *
+ * @retval 1 – `c` is alphabetical.
+ * @retval 0 – `c` is not alphabetical.
+ *
+ * @pre `c` is a value representable as `unsigned char` [0, 255]
+ * or `EOF` (-1).
+ */
 int		ft_isalpha(int c);
+
+/**
+ * @ingroup ctype_class
+ * @brief Checks if a character is a digit.
+ *
+ * @param c The character to test.
+ *
+ * @retval 1 – `c` is a digit.
+ * @retval 0 – `c` is not a digit.
+ *
+ * @pre `c` is a value representable as `unsigned char` [0, 255]
+ * or `EOF` (-1).
+ */
 int		ft_isdigit(int c);
+
+/**
+ * @ingroup ctype_class
+ * @brief Checks if a character is alphanumeric.
+ *
+ * @param c The character to test.
+ *
+ * @retval 1 – `c` is alphanumeric.
+ * @retval 0 – `c` is not alphanumeric.
+ *
+ * @pre `c` is a value representable as `unsigned char` [0, 255]
+ * or `EOF` (-1).
+ */
 int		ft_isalnum(int c);
+
+/**
+ * @ingroup ctype_class
+ * @brief Checks if a character is a member of the ASCII
+ * character set [0, 127].
+ *
+ * @param c The character to test.
+ *
+ * @retval 1 – `c` is ASCII.
+ * @retval 0 – `c` is not ASCII.
+ *
+ * @pre `c` is a value representable as `unsigned char` [0, 255]
+ * or `EOF` (-1).
+ */
 int		ft_isascii(int c);
+
+/**
+ * @ingroup ctype_class
+ * @brief Checks if a character is a printable character.
+ *
+ * @param c The character to test.
+ *
+ * @retval 1 – `c` is printable.
+ * @retval 0 – `c` is not printable.
+ *
+ * @pre `c` is a value representable as `unsigned char` [0, 255]
+ * or `EOF` (-1).
+ */
 int		ft_isprint(int c);
 
-// Converters
+/**
+ * @defgroup ctype_convert Conversion functions
+ * @ingroup ctype
+ */
 
+
+/**
+ * @ingroup ctype_convert
+ * @brief Converts a character to uppercase.
+ *
+ * @param c The character to convert.
+ *
+ * @return The uppercase equivalent of `c` if one exists, or
+ * `c` otherwise.
+ *
+ * @pre `c` is a value representable as `unsigned char` [0, 255]
+ * or `EOF` (-1).
+ */
 int		ft_toupper(int c);
+
+/**
+ * @ingroup ctype_convert
+ * @brief Converts a character to lowercase.
+ *
+ * @param c The character to convert.
+ *
+ * @return The lowercase equivalent of `c` if one exists, or
+ * `c` otherwise.
+ *
+ * @pre `c` is a value representable as `unsigned char` [0, 255]
+ * or `EOF` (-1).
+ */
 int		ft_tolower(int c);
 
 // Memory Allocators
