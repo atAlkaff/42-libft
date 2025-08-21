@@ -6,7 +6,7 @@
 /*   By: aalkaff <aalkaff@student.42abudhabi.ae>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/15 21:47:55 by aalkaff           #+#    #+#             */
-/*   Updated: 2025/08/21 22:18:12 by aalkaff          ###   ########.fr       */
+/*   Updated: 2025/08/21 22:24:13 by aalkaff          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,7 @@ typedef struct s_list
 }	t_list;
 
 /**
+ * @mainpage
  * For all libft functions, the caller is responsible for passing
  * valid input. If any libft function is called with invalid input
  * (such as a value outside the function's domain, a pointer to
@@ -131,7 +132,6 @@ int		ft_isprint(int c);
  * @defgroup ctype_convert Conversion functions
  * @ingroup ctype
  */
-
 
 /**
  * @ingroup ctype_convert
