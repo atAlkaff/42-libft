@@ -6,7 +6,7 @@
 /*   By: aalkaff <aalkaff@student.42abudhabi.ae>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/15 21:47:55 by aalkaff           #+#    #+#             */
-/*   Updated: 2025/08/22 15:44:09 by aalkaff          ###   ########.fr       */
+/*   Updated: 2025/08/22 15:57:28 by aalkaff          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -193,11 +193,41 @@ int		ft_tolower(int c);
  */
 void	*ft_calloc(size_t nmemb, size_t size);
 
-// String Functions
+/**
+ * @defgroup string String / Memory Functions
+ */
 
-// Memory Setters
+/**
+ * @defgroup memset Memory Setter Functions
+ * @ingroup string
+ * @details These functions set all bytes in a memory region to
+ * some fixed value.
+ */
 
+/**
+ * @ingroup memset
+ * @brief Sets the first `n` bytes of `dest` to the least
+ * significant byte of `c`.
+ *
+ * @param dest The destination buffer.
+ * @param c The byte to copy.
+ * @param n The number of bytes to set.
+ *
+ * @return `dest`
+ *
+ * @pre `dest` points to at least `n` bytes of writable memory.
+ */
 void	*ft_memset(void *dest, int c, size_t n);
+
+/**
+ * @ingroup memset
+ * @brief Sets the first `n` bytes of `dest` to 0.
+ *
+ * @param dest The destination buffer.
+ * @param n The number of bytes to set.
+ *
+ * @pre `dest` points to at least `n` bytes of writable memory.
+ */
 void	ft_bzero(void *dest, size_t n);
 
 // Copiers
