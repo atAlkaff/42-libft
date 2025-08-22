@@ -6,7 +6,7 @@
 /*   By: aalkaff <aalkaff@student.42abudhabi.ae>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/15 21:47:55 by aalkaff           #+#    #+#             */
-/*   Updated: 2025/08/22 19:52:48 by aalkaff          ###   ########.fr       */
+/*   Updated: 2025/08/22 19:59:49 by aalkaff          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -524,9 +524,42 @@ char	*ft_substr(const char *s, unsigned int start, size_t len);
  */
 char	*ft_strtrim(const char *s1, const char *set);
 
-// Join/Split Functions
+/**
+ * @defgroup strjoinsplit String Join / Split
+ * @ingroup string
+ * @details These functions join or split strings they receive
+ * as input and return pointers to heap-allocated strings or
+ * arrays.
+ */
 
+/**
+ * @ingroup strjoinsplit
+ * @brief Allocates and returns a string that is the result
+ * of concatenating `s1` and `s2`.
+ *
+ * @param s1 The first string.
+ * @param s2 The second string.
+ *
+ * @return A pointer to the joined string.
+ * @retval NULL – The allocation failed.
+ *
+ * @pre `s1` and `s2` point to strings.
+ */
 char	*ft_strjoin(const char *s1, const char *s2);
+
+/**
+ * @ingroup strjoinsplit
+ * @brief Allocates and returns a null-terminated array of
+ * words in `s` separated by any number of contiguous `c` characters.
+ *
+ * @return A pointer to the null-terminated array of strings.
+ * @retval NULL – The allocation failed.
+ *
+ * @pre `s` points to a string.
+ * @note This function does not return the size of the array. Instead,
+ * it appends a `NULL` element at the end to signify that there are no
+ * more strings.
+ */
 char	**ft_split(const char *s, char c);
 
 // String Iterators
