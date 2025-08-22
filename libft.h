@@ -6,7 +6,7 @@
 /*   By: aalkaff <aalkaff@student.42abudhabi.ae>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/15 21:47:55 by aalkaff           #+#    #+#             */
-/*   Updated: 2025/08/22 19:24:11 by aalkaff          ###   ########.fr       */
+/*   Updated: 2025/08/22 19:29:06 by aalkaff          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -198,6 +198,26 @@ void	*ft_calloc(size_t nmemb, size_t size);
  */
 
 /**
+ * @defgroup string_size Size / Length Functions
+ * @ingroup string
+ * @details These functions return the length of a string,
+ * which is defined as the number of bytes in the string, excluding
+ * the null terminating byte.
+ */
+
+/**
+ * @ingroup string_size
+ * @brief Calculates the length of a string.
+ *
+ * @param s The string to read.
+ *
+ * @return The length of `s`.
+ *
+ * @pre `s` points to a string.
+ */
+size_t	ft_strlen(const char *s);
+
+/**
  * @defgroup memset Memory Setter Functions
  * @ingroup string
  * @details These functions set all bytes in a memory region to
@@ -369,13 +389,17 @@ int		ft_memcmp(const void *s1, const void *s2, size_t n);
  */
 int		ft_strncmp(const char *s1, const char *s2, size_t n);
 
-// Searchers
+/**
+ * @defgroup string_search String Search Functions
+ * @ingroup string
+ * @details These functions search for a character or a string in
+ * a string or memory region.
+ */
 
 void	*ft_memchr(const void *s, int c, size_t n);
 char	*ft_strchr(const char *s, int c);
 char	*ft_strrchr(const char *s, int c);
 char	*ft_strnstr(const char *haystack, const char *needle, size_t n);
-size_t	ft_strlen(const char *s);
 
 // Duplicators
 
