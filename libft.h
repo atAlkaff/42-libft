@@ -6,7 +6,7 @@
 /*   By: aalkaff <aalkaff@student.42abudhabi.ae>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/15 21:47:55 by aalkaff           #+#    #+#             */
-/*   Updated: 2025/08/22 19:14:35 by aalkaff          ###   ########.fr       */
+/*   Updated: 2025/08/22 19:24:11 by aalkaff          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -325,9 +325,48 @@ size_t	ft_strlcpy(char *dest, const char *src, size_t n);
  */
 size_t	ft_strlcat(char *dest, const char *src, size_t n);
 
-// Comparators
+/**
+ * @defgroup comparators Comparison Functions
+ * @ingroup string
+ * @details These functions compare two strings or memory regions
+ * up to a number of bytes, then return the difference of the first
+ * two different bytes casted to `unsigned char`. If no difference
+ * is found, these functions return 0.
+ */
 
+/**
+ * @ingroup comparators
+ * @brief Compares the first `n` bytes of two memory regions.
+ *
+ * @param s1 The first region.
+ * @param s2 The second region.
+ * @param n The maximum number of bytes to compare.
+ *
+ * @return The difference in the values of the first two different
+ * bytes, each casted to `unsigned char`.
+ * @retval 0 – The first `n` bytes of the two regions all have
+ * the same values.
+ *
+ * @pre `s1` and `s2` each point to at least `n` bytes of memory.
+ */
 int		ft_memcmp(const void *s1, const void *s2, size_t n);
+
+/**
+ * @ingroup comparators
+ * @brief Compares two strings, until a null terminator is reached
+ * or until `n` bytes are read, whichever is earlier.
+ *
+ * @param s1 The first string.
+ * @param s2 The second string.
+ * @param n The maximum number of bytes to compare.
+ *
+ * @return The difference in the values of the first two different
+ * bytes, each casted to `unsigned char`.
+ * @retval 0 – `s1` and `s2` have the exact same characters or the
+ * first `n` bytes have the same values.
+ *
+ * @pre `s1` and `s2` point to strings.
+ */
 int		ft_strncmp(const char *s1, const char *s2, size_t n);
 
 // Searchers
