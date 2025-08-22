@@ -6,7 +6,7 @@
 /*   By: aalkaff <aalkaff@student.42abudhabi.ae>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/15 21:47:55 by aalkaff           #+#    #+#             */
-/*   Updated: 2025/08/22 21:39:53 by aalkaff          ###   ########.fr       */
+/*   Updated: 2025/08/22 21:40:44 by aalkaff          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -591,7 +591,7 @@ void	ft_striteri(char *s, void (*f)(unsigned int, char *));
  * @return A pointer to the new string.
  * @retval NULL – The allocation failed.
  *
- * @pre `s` points to a writable buffer that contains a string.
+ * @pre `s` points to a string.
  * @pre `f` points to a function that accepts an unsigned integer
  * (the index) and a character.
  * @warning If `f` fails to handle valid input, the behavior is
