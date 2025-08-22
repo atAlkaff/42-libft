@@ -6,7 +6,7 @@
 /*   By: aalkaff <aalkaff@student.42abudhabi.ae>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/15 21:47:55 by aalkaff           #+#    #+#             */
-/*   Updated: 2025/08/22 21:34:35 by aalkaff          ###   ########.fr       */
+/*   Updated: 2025/08/22 21:37:34 by aalkaff          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -334,8 +334,9 @@ size_t	ft_strlcpy(char *dest, const char *src, size_t n);
  *
  * @pre `dest` points to a writable string.
  * @pre `src` points to a string.
- * @post If `dest` was longer than `n - 1`, the next bytes have
- * the same values as `src`, up to a total of `n - 1` bytes.
+ * @post If `ft_strlen(dest) >= n`, then `dest` is unchanged.
+ * Otherwise, `src` is concatenated up to a total length of `n - 1`
+ * and `dest` is null terminated.
  */
 size_t	ft_strlcat(char *dest, const char *src, size_t n);
 
