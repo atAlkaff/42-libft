@@ -6,7 +6,7 @@
 /*   By: aalkaff <aalkaff@student.42abudhabi.ae>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/15 21:47:55 by aalkaff           #+#    #+#             */
-/*   Updated: 2025/08/22 21:40:44 by aalkaff          ###   ########.fr       */
+/*   Updated: 2025/08/22 21:42:48 by aalkaff          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -305,8 +305,8 @@ void	*ft_memmove(void *dest, const void *src, size_t n);
  * @param n The maximum size of the resulting string.
  * @return The length of `src`.
  *
- * @pre `dest` points to at least `min(n, ft_strlen(src) + 1)`
- * bytes of writable memory.
+ * @pre If `n > 0`, `dest` points to at least `min(n, ft_strlen(src)
+ * + 1)` bytes of writable memory.
  * @pre `src` points to a string.
  * @post The first `min(n - 1, ft_strlen(src))` bytes of `dest` are
  * the same as `src`. The next byte in `dest` is the null terminator.
