@@ -6,7 +6,7 @@
 /*   By: aalkaff <aalkaff@student.42abudhabi.ae>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/15 21:47:55 by aalkaff           #+#    #+#             */
-/*   Updated: 2025/08/22 15:57:28 by aalkaff          ###   ########.fr       */
+/*   Updated: 2025/08/22 17:22:14 by aalkaff          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -216,6 +216,7 @@ void	*ft_calloc(size_t nmemb, size_t size);
  * @return `dest`
  *
  * @pre `dest` points to at least `n` bytes of writable memory.
+ * @post The first `n` bytes of `dest` are `(unsigned char) c`.
  */
 void	*ft_memset(void *dest, int c, size_t n);
 
@@ -227,13 +228,75 @@ void	*ft_memset(void *dest, int c, size_t n);
  * @param n The number of bytes to set.
  *
  * @pre `dest` points to at least `n` bytes of writable memory.
+ * @post The first `n` bytes of `dest` are 0.
  */
 void	ft_bzero(void *dest, size_t n);
 
-// Copiers
+/**
+ * @defgroup copiers String / Memory Copy Functions
+ * @ingroup string
+ * @details These functions copy one string or memory region to
+ * another. The `dest` parameter to each of these functions is
+ * a writable buffer. The fact that it may be declared `char *`
+ * does not require the caller to pass a string. Instead, it
+ * guarantees that after a successful function call, the buffer
+ * will contain a string.
+ */
 
+/**
+ * @ingroup copiers
+ * @brief Copies `n` bytes from `src` to `dest`. If `src` and `dest`
+ * overlap, use @ref ft_memmove() instead.
+ *
+ * @param dest The destination buffer.
+ * @param src The source buffer.
+ * @param n The number of bytes to copy.
+ *
+ * @return `dest`
+ *
+ * @pre `dest` points to at least `n` bytes of writable memory.
+ * @pre `src` points to at least `n` bytes of memory.
+ * @post The first `n` bytes of `dest` have the same values as
+ * the first `n` bytes of `src`.
+ */
 void	*ft_memcpy(void *dest, const void *src, size_t n);
+
+/**
+ * @ingroup copiers
+ * @brief Copies `n` bytes from `src` to `dest` as if an intermediate
+ * buffer was used. This function safely handles overlapping memory
+ * regions. If there is no overlap, use @ref ft_memcpy() instead.
+ *
+ * @param dest The destination buffer.
+ * @param src The source buffer.
+ * @param n The number of bytes to copy.
+ *
+ * @return `dest`
+ *
+ * @pre `dest` points to at least `n` bytes of writable memory.
+ * @pre `src` points to at least `n` bytes of memory.
+ * @post The first `n` bytes of `dest` have the same values that
+ * the first `n` bytes of `src` had before the function call.
+ */
 void	*ft_memmove(void *dest, const void *src, size_t n);
+
+/**
+ * @ingroup copiers
+ * @brief Copies characters from `src` to `dest` until a null
+ * terminating character is found or until `n - 1` characters
+ * are copied.
+ *
+ * @param dest The destination buffer.
+ * @param src The source string.
+ * @param n The maximum size of the resulting string.
+ * @return The length of `src`.
+ *
+ * @pre `dest` points to at least `min(n, ft_strlen(src) + 1)`
+ * bytes of writable memory.
+ * @pre `src` points to a string.
+ * @post The first `min(n - 1, ft_strlen(src))` bytes of `dest` are
+ * the same as `src`. The next byte in `dest` is the null terminator.
+ */
 size_t	ft_strlcpy(char *dest, const char *src, size_t n);
 
 // Concatenators
