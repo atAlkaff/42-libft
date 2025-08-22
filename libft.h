@@ -6,7 +6,7 @@
 /*   By: aalkaff <aalkaff@student.42abudhabi.ae>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/15 21:47:55 by aalkaff           #+#    #+#             */
-/*   Updated: 2025/08/22 15:35:43 by aalkaff          ###   ########.fr       */
+/*   Updated: 2025/08/22 15:44:09 by aalkaff          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -167,9 +167,10 @@ int		ft_tolower(int c);
  * @details These functions attempt to allocate a chunk of memory.
  * If the caller requests more than `PTRDIFF_MAX` bytes, these
  * functions fail. This is because chunks larger than that overflow
- * the signed integer type `ptrdiff_t` on addition and thus violate
- * the standard. See C99 Standard Section 7.17 ("Common
- * Definitions <stddef.h>").
+ * the signed integer type `ptrdiff_t` on addition and is language
+ * undefined behavior. See C99 Standard Section 7.17 ("Common
+ * Definitions <stddef.h>"); Section 3.4.3 ("Undefined Behavior"),
+ * example paragraph.
  */
 
 /**
@@ -187,9 +188,8 @@ int		ft_tolower(int c);
  * caller must not attempt to dereference that pointer. See C99
  * Standard Section 7.20.3 ("Memory management functions").
  *
- * @retval NULL – The allocation failed.
- *
- * @pre `nmemb * size <= PTRDIFF_MAX`
+ * @retval NULL – The allocation failed (insufficient memory or
+ * attempt to allocate more than `PTRDIFF_MAX` bytes).
  */
 void	*ft_calloc(size_t nmemb, size_t size);
 
