@@ -6,7 +6,7 @@
 /*   By: aalkaff <aalkaff@student.42abudhabi.ae>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/15 21:47:55 by aalkaff           #+#    #+#             */
-/*   Updated: 2025/08/22 20:26:53 by aalkaff          ###   ########.fr       */
+/*   Updated: 2025/08/22 21:31:59 by aalkaff          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,12 +16,6 @@
 
 // size_t and NULL
 # include <stddef.h>
-
-typedef struct s_list
-{
-	void			*content;
-	struct s_list	*next;
-}	t_list;
 
 /**
  * @mainpage
@@ -695,30 +689,214 @@ void	ft_putendl_fd(char *s, int fd);
  */
 void	ft_putnbr_fd(int n, int fd);
 
-// Linked List Functions
+/**
+ * @defgroup linkedlist Linked Lists
+ * @details The linked list structure (`s_list`) and its
+ * member functions.
+ */
 
-// Constructor
+/**
+ * @ingroup linkedlist
+ * @brief Linked list node.
+ */
+typedef struct s_list
+{
+	/**
+	 * @brief The data contained by the node. This may be `NULL`.
+	 */
+	void			*content;
+	/**
+	 * @brief A pointer to the next node in the list.
+	 * If this is `NULL`, the current node is the last node.
+	 */
+	struct s_list	*next;
+}	t_list;
 
+/**
+ * @defgroup linkedlist_constructor Constructors
+ * @ingroup linkedlist
+ * @details These functions allocate and return linked list
+ * nodes.
+ */
+
+/**
+ * @ingroup linkedlist_constructor
+ * @memberof s_list
+ * @brief Allocates and returns a new linked list node. The node
+ * will have `content` as its content and `next` set to `NULL`.
+ *
+ * @param content A pointer to the node's content.
+ *
+ * @return A pointer to the new list node.
+ * @retval NULL – The allocation failed.
+ */
 t_list	*ft_lstnew(void *content);
 
-// Appenders
+/**
+ * @defgroup linkedlist_add Append Functions
+ * @ingroup linkedlist
+ * @details These functions append a new element to a
+ * linked list.
+ */
 
+/**
+ * @ingroup linkedlist_add
+ * @memberof s_list
+ * @brief Adds `element` to the start of `lst`.
+ *
+ * @param lst A pointer to the address of the first element.
+ * If this is `NULL`, the list is empty.
+ * @param element The new element.
+ *
+ * @pre `lst` points to a list pointer or `NULL`.
+ * @pre `element` is a valid list pointer.
+ * @post `*lst == element`
+ */
 void	ft_lstadd_front(t_list **lst, t_list *element);
+
+/**
+ * @ingroup linkedlist_add
+ * @memberof s_list
+ * @brief Adds `element` to the end of `lst`.
+ *
+ * @param lst A pointer to the address of the first element.
+ * If this is `NULL`, the list is empty.
+ * @param element The new element.
+ *
+ * @pre `lst` points to a list pointer or `NULL`.
+ * @pre `element` is a valid list pointer.
+ * @post `ft_lstlast(*lst) == element`
+ */
 void	ft_lstadd_back(t_list **lst, t_list *element);
 
-// Searchers
+/**
+ * @defgroup linkedlist_iter Iterators
+ * @ingroup linkedlist
+ * @details These functions simply iterate over list elements
+ * until reaching `NULL`. They do not call external functions.
+ */
 
+/**
+ * @ingroup linkedlist_iter
+ * @memberof s_list
+ * @brief Returns the last element of `lst`.
+ *
+ * @param lst A pointer to the first element in the list.
+ *
+ * @return A pointer to the last element.
+ *
+ * @pre `lst` is a valid list pointer.
+ */
 t_list	*ft_lstlast(t_list *lst);
+
+/**
+ * @ingroup linkedlist_iter
+ * @memberof s_list
+ * @brief Returns the number of nodes starting from `lst`
+ * until and excluding `NULL`.
+ *
+ * @param lst A pointer to the first element in the list.
+ *
+ * @return The number of elements in `lst`.
+ *
+ * @pre `lst` is a valid list pointer.
+ */
 int		ft_lstsize(t_list *lst);
 
-// Iterators
+/**
+ * @defgroup linkedlist_funciter Functional Iterators and Mappers
+ * @ingroup linkedlist
+ * @details These functions iterate over all elements in a list
+ * and call a given function on each one's content.
+ */
 
+/**
+ * @ingroup linkedlist_funciter
+ * @memberof s_list
+ * @brief Applies `f` to the content of every element in `lst`. `f`
+ * may manipulate the content of any node.
+ *
+ * @param lst A pointer to the first element in the list.
+ * @param f The function to call on each element's content.
+ *
+ * @pre `lst` is a valid list pointer.
+ * @pre `f` is a valid pointer to a function that takes a pointer
+ * argument and returns nothing.
+ *
+ * @warning The content of a node may validly be `NULL`. Therefore,
+ * `f` is required to safely handle `NULL`. If `f` fails to handle
+ * valid input, the behavior is undefined.
+ */
 void	ft_lstiter(t_list *lst, void (*f)(void *));
+
+/**
+ * @ingroup linkedlist_funciter
+ * @memberof s_list
+ * @brief Allocates and returns a list whose elements have
+ * `f(lst->content)` as their content. If one allocation fails,
+ * the function frees the new list and returns `NULL`.
+ *
+ * @param lst A pointer to the first element in the list.
+ * @param f The function to call on each element's content.
+ * @param del A function that frees the content of an element.
+ *
+ * @return A pointer to the new list.
+ * @retval NULL – The allocation failed.
+ *
+ * @pre `lst` is a valid list pointer.
+ * @pre `f` is a valid pointer to a function that takes a pointer
+ * argument and returns nothing.
+ *
+ * @warning The content of a node may validly be `NULL`. Therefore,
+ * `f` is required to safely handle `NULL`. If `f` fails to handle
+ * valid input, the behavior is undefined.
+ * @warning `del` must properly free the content of a list element.
+ * If `del` fails to completely free the content and any pointers
+ * that become unusable upon freeing it, this function leaks memory.
+ */
 t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *));
 
-// Deleters
+/**
+ * @defgroup linkedlist_delete Destructors
+ * @ingroup linkedlist
+ * @details These functions free a linked list or one of its nodes
+ * and the content of all freed nodes.
+ */
 
+/**
+ * @ingroup linkedlist_delete
+ * @memberof s_list
+ * @brief Frees `lst` (but not the next node) and frees its
+ * content using `del`.
+ *
+ * @param lst A pointer to the node to be freed.
+ * @param del The function that frees the content.
+ *
+ * @pre `lst` is a valid list pointer.
+ *
+ * @warning `del` must properly free the content of a list element.
+ * If `del` fails to completely free the content and any pointers
+ * that become unusable upon freeing it, this function leaks memory.
+ */
 void	ft_lstdelone(t_list *lst, void (*del)(void *));
+
+/**
+ * @ingroup linkedlist_delete
+ * @memberof s_list
+ * @brief Frees all nodes starting at `*lst` and frees their contents
+ * using `del`, then sets `*lst` to `NULL`.
+ *
+ * @param lst A pointer to the address of the first node.
+ * @param del The function that frees the content of a node.
+ *
+ * @pre `lst` points to a valid list pointer or `NULL`.
+ *
+ * @post `*lst == NULL`
+ *
+ * @warning `del` must properly free the content of a list element.
+ * If `del` fails to completely free the content and any pointers
+ * that become unusable upon freeing it, this function leaks memory.
+ */
 void	ft_lstclear(t_list **lst, void (*del)(void *));
 
 #endif
