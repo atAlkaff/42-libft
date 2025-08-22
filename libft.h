@@ -6,7 +6,7 @@
 /*   By: aalkaff <aalkaff@student.42abudhabi.ae>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/15 21:47:55 by aalkaff           #+#    #+#             */
-/*   Updated: 2025/08/22 20:25:25 by aalkaff          ###   ########.fr       */
+/*   Updated: 2025/08/22 20:26:53 by aalkaff          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -625,6 +625,8 @@ char	*ft_strmapi(const char *s, char (*f)(unsigned int, char));
  * a number less than `LONG_MIN`.
  * @retval (int)LONG_MAX – `nptr` represented `(int)LONG_MAX` or
  * a number greater than `LONG_MAX`.
+ *
+ * @pre `nptr` points to a string.
  */
 int		ft_atoi(const char *nptr);
 
