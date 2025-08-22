@@ -6,7 +6,7 @@
 /*   By: aalkaff <aalkaff@student.42abudhabi.ae>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/15 21:47:55 by aalkaff           #+#    #+#             */
-/*   Updated: 2025/08/22 21:39:06 by aalkaff          ###   ########.fr       */
+/*   Updated: 2025/08/22 21:39:53 by aalkaff          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -846,7 +846,7 @@ void	ft_lstiter(t_list *lst, void (*f)(void *));
  *
  * @pre `lst` is a valid list pointer.
  * @pre `f` is a valid pointer to a function that takes a pointer
- * argument and returns nothing.
+ * argument and returns a pointer (which may be `NULL`).
  *
  * @warning The content of a node may validly be `NULL`. Therefore,
  * `f` is required to safely handle `NULL`. If `f` fails to handle
