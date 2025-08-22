@@ -6,7 +6,7 @@
 /*   By: aalkaff <aalkaff@student.42abudhabi.ae>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/15 21:47:55 by aalkaff           #+#    #+#             */
-/*   Updated: 2025/08/22 19:59:49 by aalkaff          ###   ########.fr       */
+/*   Updated: 2025/08/22 20:06:29 by aalkaff          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -562,9 +562,46 @@ char	*ft_strjoin(const char *s1, const char *s2);
  */
 char	**ft_split(const char *s, char c);
 
-// String Iterators
+/**
+ * @defgroup stritmap String Iterators and Mappers
+ * @ingroup string
+ * @details These functions call a function on all characters
+ * of a string.
+ */
 
+/**
+ * @ingroup stritmap
+ * @brief Calls `f` on all characters in `s` and their indices,
+ * allowing `f` to change the values of the characters.
+ *
+ * @param s The string to iterate over.
+ * @param f The function to call on each character and index.
+ *
+ * @pre `s` points to a writable buffer that contains a string.
+ * @pre `f` points to a function that accepts an unsigned integer
+ * (the index) and a character pointer (to allow change).
+ * @warning If `f` fails to handle valid input, the behavior is
+ * undefined.
+ */
 void	ft_striteri(char *s, void (*f)(unsigned int, char *));
+
+/**
+ * @ingroup stritmap
+ * @brief Allocates and returns a string whose characters are the
+ * result of `f(i, s[i])` for each character in `s`.
+ *
+ * @param s The string to iterate over.
+ * @param f The function to call on each character and index.
+ *
+ * @return A pointer to the new string.
+ * @retval NULL – The allocation failed.
+ *
+ * @pre `s` points to a writable buffer that contains a string.
+ * @pre `f` points to a function that accepts an unsigned integer
+ * (the index) and a character.
+ * @warning If `f` fails to handle valid input, the behavior is
+ * undefined.
+ */
 char	*ft_strmapi(const char *s, char (*f)(unsigned int, char));
 
 // Integer/String Converters
