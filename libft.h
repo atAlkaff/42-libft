@@ -6,7 +6,7 @@
 /*   By: aalkaff <aalkaff@student.42abudhabi.ae>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/15 21:47:55 by aalkaff           #+#    #+#             */
-/*   Updated: 2025/08/22 21:42:48 by aalkaff          ###   ########.fr       */
+/*   Updated: 2025/08/22 21:47:27 by aalkaff          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,6 +44,10 @@
 
 /**
  * @defgroup ctype Character Classification and Conversion functions
+ * @details These functions check if a given character is in a certain
+ * class. They are defined only for inputs representable as
+ * `unsigned char` or `EOF`. They work only on the default "C locale"
+ * or "POSIX locale", regardless of what the current machine locale is.
  */
 
 /**
