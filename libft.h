@@ -6,7 +6,7 @@
 /*   By: aalkaff <aalkaff@student.42abudhabi.ae>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/15 21:47:55 by aalkaff           #+#    #+#             */
-/*   Updated: 2025/08/22 19:44:33 by aalkaff          ###   ########.fr       */
+/*   Updated: 2025/08/22 19:52:48 by aalkaff          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -358,7 +358,7 @@ size_t	ft_strlcat(char *dest, const char *src, size_t n);
  *
  * @param s The string to duplicate.
  *
- * @return A deep copy of `s`.
+ * @return A pointer to deep copy of `s`.
  * @retval NULL – The allocation failed.
  */
 char	*ft_strdup(const char *s);
@@ -482,9 +482,46 @@ char	*ft_strrchr(const char *s, int c);
  */
 char	*ft_strnstr(const char *haystack, const char *needle, size_t n);
 
-// Substring Functions
+/**
+ * @defgroup substr Substring Function
+ * @ingroup string
+ * @details These functions allocate on the heap a substring of their
+ * input and return that substring.
+ */
 
+/**
+ * @ingroup substr
+ * @brief Allocates and returns a substring of `s` starting at
+ * index `start` up to `len` characters long.
+ *
+ * @param s The original string.
+ * @param start The starting index of the substring.
+ * @param len The maximum length of the substring.
+ *
+ * @return A pointer to the new substring.
+ * @retval NULL – The allocation failed.
+ *
+ * @pre `s` points to a string.
+ *
+ * @note If `start + len > ft_strlen(s)`, then the substring's length
+ * is capped at `ft_strlen(s) - start` or 0, whichever is greater.
+ */
 char	*ft_substr(const char *s, unsigned int start, size_t len);
+
+/**
+ * @ingroup substr
+ * @brief Allocates and returns a substring of `s1`, trimmed by
+ * removing all leading and trailing characters in `set`.
+ *
+ * @param s1 The original string.
+ * @param set The set of characters to remove from the start
+ * and end of `s1`.
+ *
+ * @return A pointer to the trimmed string.
+ * @retval NULL – The allocation failed.
+ *
+ * @pre `s1` and `set` point to strings.
+ */
 char	*ft_strtrim(const char *s1, const char *set);
 
 // Join/Split Functions
