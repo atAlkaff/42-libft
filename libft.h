@@ -6,7 +6,7 @@
 /*   By: aalkaff <aalkaff@student.42abudhabi.ae>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/15 21:47:55 by aalkaff           #+#    #+#             */
-/*   Updated: 2025/08/22 21:37:34 by aalkaff          ###   ########.fr       */
+/*   Updated: 2025/08/22 21:39:06 by aalkaff          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -615,7 +615,7 @@ char	*ft_strmapi(const char *s, char (*f)(unsigned int, char));
  *
  * @return The number represented by `nptr`.
  *
- * @retval 0 – `nptr` represented 0 or did not represent a number.
+ * @retval 0 – `nptr` represented 0 or did not begin with a digit.
  * @retval (int)LONG_MIN – `nptr` represented `(int)LONG_MIN` or
  * a number less than `LONG_MIN`.
  * @retval (int)LONG_MAX – `nptr` represented `(int)LONG_MAX` or
