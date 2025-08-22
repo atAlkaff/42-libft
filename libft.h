@@ -6,7 +6,7 @@
 /*   By: aalkaff <aalkaff@student.42abudhabi.ae>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/15 21:47:55 by aalkaff           #+#    #+#             */
-/*   Updated: 2025/08/22 21:31:59 by aalkaff          ###   ########.fr       */
+/*   Updated: 2025/08/22 21:34:35 by aalkaff          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -884,7 +884,8 @@ void	ft_lstdelone(t_list *lst, void (*del)(void *));
  * @ingroup linkedlist_delete
  * @memberof s_list
  * @brief Frees all nodes starting at `*lst` and frees their contents
- * using `del`, then sets `*lst` to `NULL`.
+ * using `del`, then sets `*lst` to `NULL`. If `*lst` is `NULL`, the
+ * function does nothing.
  *
  * @param lst A pointer to the address of the first node.
  * @param del The function that frees the content of a node.
