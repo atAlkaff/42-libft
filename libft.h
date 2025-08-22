@@ -6,7 +6,7 @@
 /*   By: aalkaff <aalkaff@student.42abudhabi.ae>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/15 21:47:55 by aalkaff           #+#    #+#             */
-/*   Updated: 2025/08/22 17:22:14 by aalkaff          ###   ########.fr       */
+/*   Updated: 2025/08/22 19:14:35 by aalkaff          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -233,7 +233,7 @@ void	*ft_memset(void *dest, int c, size_t n);
 void	ft_bzero(void *dest, size_t n);
 
 /**
- * @defgroup copiers String / Memory Copy Functions
+ * @defgroup copiers Copy Functions
  * @ingroup string
  * @details These functions copy one string or memory region to
  * another. The `dest` parameter to each of these functions is
@@ -299,8 +299,30 @@ void	*ft_memmove(void *dest, const void *src, size_t n);
  */
 size_t	ft_strlcpy(char *dest, const char *src, size_t n);
 
-// Concatenators
+/**
+ * @defgroup concat Concatenation Functions
+ * @ingroup string
+ * @details These functions concatenate one string to another.
+ * The `dest` parameter to each of these functions is a writable
+ * buffer which must contain a string.
+ */
 
+/**
+ * @ingroup concat
+ * @brief Concatenates `src` to `dest` up to a total of `n - 1`
+ * bytes.
+ *
+ * @param dest The destination string.
+ * @param src The source string.
+ * @param n The maximum size of the resulting string.
+ *
+ * @return `ft_strlen(src) + min(ft_strlen(dest), n)`
+ *
+ * @pre `dest` points to a writable string.
+ * @pre `src` points to a string.
+ * @post If `dest` was longer than `n - 1`, the next bytes have
+ * the same values as `src`, up to a total of `n - 1` bytes.
+ */
 size_t	ft_strlcat(char *dest, const char *src, size_t n);
 
 // Comparators
