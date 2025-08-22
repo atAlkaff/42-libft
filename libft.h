@@ -6,7 +6,7 @@
 /*   By: aalkaff <aalkaff@student.42abudhabi.ae>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/15 21:47:55 by aalkaff           #+#    #+#             */
-/*   Updated: 2025/08/22 19:29:06 by aalkaff          ###   ########.fr       */
+/*   Updated: 2025/08/22 19:44:33 by aalkaff          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -346,6 +346,24 @@ size_t	ft_strlcpy(char *dest, const char *src, size_t n);
 size_t	ft_strlcat(char *dest, const char *src, size_t n);
 
 /**
+ * @defgroup strdup String Duplication Functions
+ * @ingroup string
+ * @details These functions allocate on the heap a deep copy of
+ * the string they receive as input and return that deep copy.
+ */
+
+/**
+ * @ingroup strdup
+ * @brief Allocates and returns a deep copy of `s`.
+ *
+ * @param s The string to duplicate.
+ *
+ * @return A deep copy of `s`.
+ * @retval NULL – The allocation failed.
+ */
+char	*ft_strdup(const char *s);
+
+/**
  * @defgroup comparators Comparison Functions
  * @ingroup string
  * @details These functions compare two strings or memory regions
@@ -396,14 +414,73 @@ int		ft_strncmp(const char *s1, const char *s2, size_t n);
  * a string or memory region.
  */
 
+/**
+ * @ingroup string_search
+ * @brief Finds the first occurrence of a the least significant
+ * byte of `c` in a memory region.
+ *
+ * @param s The buffer to search.
+ * @param c The byte to search for.
+ * @param n The number of bytes to search.
+ *
+ * @return A pointer to the first occurrence of `(unsigned char) c`
+ * in the first `n` bytes of `s`.
+ * @retval NULL – `(unsigned char) c` was not found in the first
+ * `n` bytes of `s`.
+ *
+ * @pre `s` points to at least `n` bytes of memory.
+ */
 void	*ft_memchr(const void *s, int c, size_t n);
+
+/**
+ * @ingroup string_search
+ * @brief Finds the first occurrence of a the least significant
+ * byte of `c` in a string.
+ *
+ * @param s The string to search.
+ * @param c The byte to search for.
+ *
+ * @return A pointer to the first occurrence of `(unsigned char) c`
+ * in `s`.
+ * @retval NULL – `(unsigned char) c` was not found in `s`.
+ *
+ * @pre `s` points to a string.
+ */
 char	*ft_strchr(const char *s, int c);
+
+/**
+ * @ingroup string_search
+ * @brief Finds the last occurrence of a the least significant
+ * byte of `c` in a string.
+ *
+ * @param s The string to search.
+ * @param c The byte to search for.
+ *
+ * @return A pointer to the last occurrence of `(unsigned char) c`
+ * in `s`.
+ * @retval NULL – `(unsigned char) c` was not found in `s`.
+ *
+ * @pre `s` points to a string.
+ */
 char	*ft_strrchr(const char *s, int c);
+
+/**
+ * @ingroup string_search
+ * @brief Finds the first occurrence of substring `needle` in
+ * the first `min(n, ft_strlen(haystack))` bytes of `haystack`.
+ *
+ * @param haystack The string to search in.
+ * @param needle The string to search for.
+ * @param n The maximum number of bytes to search.
+ *
+ * @return A pointer to the first occurrence of `needle` in
+ * the first `min(n, ft_strlen(haystack))` bytes of `haystack`.
+ * @retval NULL – `needle` was not found in the first
+ * `min(n, ft_strlen(haystack))` bytes of `haystack`.
+ *
+ * @pre `haystack` and `needle` point to strings.
+ */
 char	*ft_strnstr(const char *haystack, const char *needle, size_t n);
-
-// Duplicators
-
-char	*ft_strdup(const char *s);
 
 // Substring Functions
 
