@@ -6,7 +6,7 @@
 /*   By: aalkaff <aalkaff@student.42abudhabi.ae>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/15 21:47:55 by aalkaff           #+#    #+#             */
-/*   Updated: 2025/08/22 20:14:38 by aalkaff          ###   ########.fr       */
+/*   Updated: 2025/08/22 20:25:25 by aalkaff          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -640,11 +640,57 @@ int		ft_atoi(const char *nptr);
  */
 char	*ft_itoa(int n);
 
-// Input/Output Functions
+/**
+ * @defgroup io Input / Output Functions
+ * @details These functions are system call wrappers that
+ * read from or write to a file descriptor. See POSIX.1-2008
+ * Section 3.165 ("File Descriptor").
+ */
 
+/**
+ * @ingroup io
+ * @brief Writes `c` to `fd`.
+ *
+ * @param c The character to write.
+ * @param fd The file descriptor.
+ *
+ * @pre The caller has permission to write to `fd`.
+ */
 void	ft_putchar_fd(char c, int fd);
+
+/**
+ * @ingroup io
+ * @brief Writes `s` to `fd`.
+ *
+ * @param s The string to write.
+ * @param fd The file descriptor.
+ *
+ * @pre `s` points to a string.
+ * @pre The caller has permission to write to `fd`.
+ */
 void	ft_putstr_fd(char *s, int fd);
+
+/**
+ * @ingroup io
+ * @brief Writes `s` to `fd`, followed by a newline.
+ *
+ * @param s The string to write.
+ * @param fd The file descriptor.
+ *
+ * @pre `s` points to a string.
+ * @pre The caller has permission to write to `fd`.
+ */
 void	ft_putendl_fd(char *s, int fd);
+
+/**
+ * @ingroup io
+ * @brief Writes the string representation of `n` to `fd`.
+ *
+ * @param n The number to write.
+ * @param fd The file descriptor.
+ *
+ * @pre The caller has permission to write to `fd`.
+ */
 void	ft_putnbr_fd(int n, int fd);
 
 // Linked List Functions
