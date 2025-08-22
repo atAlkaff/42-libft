@@ -6,7 +6,7 @@
 /*   By: aalkaff <aalkaff@student.42abudhabi.ae>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/15 21:47:55 by aalkaff           #+#    #+#             */
-/*   Updated: 2025/08/22 20:06:29 by aalkaff          ###   ########.fr       */
+/*   Updated: 2025/08/22 20:14:38 by aalkaff          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -604,9 +604,40 @@ void	ft_striteri(char *s, void (*f)(unsigned int, char *));
  */
 char	*ft_strmapi(const char *s, char (*f)(unsigned int, char));
 
-// Integer/String Converters
+/**
+ * @defgroup intstr Integer / String Converters
+ * @details These functions convert between a number and its string
+ * representation.
+ */
 
+/**
+ * @ingroup intstr
+ * @brief Returns the number represented by `nptr`. The function
+ * skips leading whitespace and handles one optional + or - sign,
+ * then reads until the first non-digit character.
+ *
+ * @param nptr The string representation of a number.
+ *
+ * @return The number represented by `nptr`.
+ *
+ * @retval 0 – `nptr` represented 0 or did not represent a number.
+ * @retval (int)LONG_MIN – `nptr` represented `(int)LONG_MIN` or
+ * a number less than `LONG_MIN`.
+ * @retval (int)LONG_MAX – `nptr` represented `(int)LONG_MAX` or
+ * a number greater than `LONG_MAX`.
+ */
 int		ft_atoi(const char *nptr);
+
+/**
+ * @ingroup intstr
+ * @brief Allocates and returns the string representation
+ * of `n`.
+ *
+ * @param n The number to be converted.
+ *
+ * @return A pointer to a string representing `n`.
+ * @retval NULL – The allocation failed.
+ */
 char	*ft_itoa(int n);
 
 // Input/Output Functions
