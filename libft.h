@@ -6,7 +6,7 @@
 /*   By: aalkaff <aalkaff@student.42abudhabi.ae>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/15 21:47:55 by aalkaff           #+#    #+#             */
-/*   Updated: 2025/08/21 22:43:33 by aalkaff          ###   ########.fr       */
+/*   Updated: 2025/08/22 15:35:43 by aalkaff          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,10 +37,10 @@ typedef struct s_list
  * libc and adjacent libraries. See ISO 9899:1999 ("C99 Standard")
  * Section 7.1.4 ("Use of library functions").
  *
- * ## Definition of string
- * For all libft purposes, a "string" is a null-terminated character
- * array (a "C string"). See C99 Standard Section 7.1.1 ("Definitions
- * of terms").
+ * ## Definitions
+ * - A "byte" is 8 bits. See POSIX.1-2008 Section 3.83.
+ * - A "string" is a null-terminated character array (a "C string").
+ * See C99 Standard Section 7.1.1 ("Definitions of terms").
  *
  * ## Locale
  * Libft functions do not support locales. All libft functions run on
@@ -49,11 +49,11 @@ typedef struct s_list
  */
 
 /**
- * @defgroup ctype Character classification and conversion functions
+ * @defgroup ctype Character Classification and Conversion functions
  */
 
 /**
- * @defgroup ctype_class Classification functions
+ * @defgroup ctype_class Classification Functions
  * @ingroup ctype
  */
 
@@ -129,7 +129,7 @@ int		ft_isascii(int c);
 int		ft_isprint(int c);
 
 /**
- * @defgroup ctype_convert Conversion functions
+ * @defgroup ctype_convert Conversion Functions
  * @ingroup ctype
  */
 
@@ -161,8 +161,36 @@ int		ft_toupper(int c);
  */
 int		ft_tolower(int c);
 
-// Memory Allocators
+/**
+ * @defgroup memalloc Memory Allocators
+ *
+ * @details These functions attempt to allocate a chunk of memory.
+ * If the caller requests more than `PTRDIFF_MAX` bytes, these
+ * functions fail. This is because chunks larger than that overflow
+ * the signed integer type `ptrdiff_t` on addition and thus violate
+ * the standard. See C99 Standard Section 7.17 ("Common
+ * Definitions <stddef.h>").
+ */
 
+/**
+ * @ingroup memalloc
+ *
+ * @brief Attempts to allocate an array on the heap and
+ * initialize all its elements to 0.
+ *
+ * @param nmemb The number of elements in the array.
+ * @param size The size (in bytes) of each element.
+ *
+ * @return A pointer to the start of the array. \n
+ * If `nmemb` or `size` is 0, the function returns a unique
+ * pointer that may successfully be passed to `free()`. The
+ * caller must not attempt to dereference that pointer. See C99
+ * Standard Section 7.20.3 ("Memory management functions").
+ *
+ * @retval NULL – The allocation failed.
+ *
+ * @pre `nmemb * size <= PTRDIFF_MAX`
+ */
 void	*ft_calloc(size_t nmemb, size_t size);
 
 // String Functions
