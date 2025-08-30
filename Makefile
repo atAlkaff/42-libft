@@ -1,12 +1,14 @@
 CC = cc
 CFLAGS = -Wall -Wextra -Werror
 
-SOURCE_DIR = ./srcs/
+SOURCE_DIR = ./src/
 
-SOURCE_FILES = *.c
+SOURCE_FILES = ft_isalpha.c ft_isdigit.c ft_isalnum.c ft_isprint.c ft_isascii.c
 
 SOURCES = $(addprefix $(SOURCE_DIR), $(SOURCE_FILES))
-OBJECTS = $(SRCS:.c=.o)
+OBJECTS = $(SOURCES:.c=.o)
+
+INCLUDE_DIR = ./
 
 NAME = libft.a
 
@@ -16,7 +18,7 @@ LIB = ranlib
 all:	$(NAME)
 
 %.o: %.c
-	$(CC) $(CFLAGS)
+	$(CC) $(CFLAGS) -c -I $(INCLUDE_DIR) $< -o $@
 
 $(NAME):	$(OBJECTS)
 	$(AR) $(NAME) $(OBJECTS)
