@@ -6,7 +6,7 @@
 /*   By: aalkaff <aalkaff@student.42abudhabi.ae>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/22 21:53:45 by aalkaff           #+#    #+#             */
-/*   Updated: 2025/08/22 22:01:14 by aalkaff          ###   ########.fr       */
+/*   Updated: 2025/08/30 23:48:28 by aalkaff          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,6 @@
 
 int	ft_isalnum(int c)
 {
-	return ((unsigned)((c | 32) - 'a') < 26
-		| (unsigned)(c - '0') < 10);
+	return (((unsigned)((c | 32) - 'a') < 26)
+		| ((unsigned)(c - '0') < 10));
 }
