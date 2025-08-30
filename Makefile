@@ -3,7 +3,11 @@ CFLAGS = -Wall -Wextra -Werror
 
 SOURCE_DIR = ./src/
 
-SOURCE_FILES = ft_isalpha.c ft_isdigit.c ft_isalnum.c ft_isprint.c ft_isascii.c
+SOURCE_FILES = ft_isalpha.c ft_isdigit.c ft_isalnum.c ft_isprint.c ft_isascii.c \
+	ft_toupper.c ft_tolower.c \
+	ft_calloc.c \
+	ft_strlen.c \
+	ft_memset.c ft_bzero.c
 
 SOURCES = $(addprefix $(SOURCE_DIR), $(SOURCE_FILES))
 OBJECTS = $(SOURCES:.c=.o)
