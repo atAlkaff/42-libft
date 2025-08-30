@@ -6,7 +6,7 @@
 /*   By: aalkaff <aalkaff@student.42abudhabi.ae>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/22 22:49:30 by aalkaff           #+#    #+#             */
-/*   Updated: 2025/08/31 00:49:15 by aalkaff          ###   ########.fr       */
+/*   Updated: 2025/08/31 00:51:53 by aalkaff          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,13 +24,13 @@ void	ft_bzero(void *s, size_t n)
 		*ptr++ = 0;
 		n--;
 	}
-	wptr = ptr;
+	wptr = (size_t *)ptr;
 	while (n >= sizeof(size_t))
 	{
 		*wptr++ = 0;
 		n -= sizeof(size_t);
 	}
-	ptr = wptr;
+	ptr = (char *)wptr;
 	while (n--)
 		*ptr++ = 0;
 }
