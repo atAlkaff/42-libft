@@ -6,7 +6,7 @@
 /*   By: aalkaff <aalkaff@student.42abudhabi.ae>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/22 22:26:37 by aalkaff           #+#    #+#             */
-/*   Updated: 2025/08/22 23:04:03 by aalkaff          ###   ########.fr       */
+/*   Updated: 2025/09/29 22:51:45 by aalkaff          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,8 @@ void	*ft_memset(void *s, int c, size_t n)
 	size_t	*wptr;
 	size_t	mask;
 
+	if (n == 0)
+		return (s);
 	ptr = s;
 	while ((uintptr_t)ptr & (sizeof(size_t) - 1) && n)
 	{
