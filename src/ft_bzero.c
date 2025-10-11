@@ -6,7 +6,7 @@
 /*   By: aalkaff <aalkaff@student.42abudhabi.ae>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/22 22:49:30 by aalkaff           #+#    #+#             */
-/*   Updated: 2025/08/31 00:51:53 by aalkaff          ###   ########.fr       */
+/*   Updated: 2025/09/29 22:52:04 by aalkaff          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,8 @@ void	ft_bzero(void *s, size_t n)
 	char	*ptr;
 	size_t	*wptr;
 
+	if (n == 0)
+		return ;
 	ptr = s;
 	while ((uintptr_t)ptr & (sizeof(size_t) - 1) && n)
 	{
