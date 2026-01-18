@@ -6,7 +6,7 @@
 /*   By: aalkaff <aalkaff@student.42abudhabi.ae>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/28 19:53:19 by aalkaff           #+#    #+#             */
-/*   Updated: 2026/01/18 19:40:51 by aalkaff          ###   ########.fr       */
+/*   Updated: 2026/01/18 19:48:37 by aalkaff          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -511,6 +511,18 @@ void	ft_putendl_fd(char *s, int fd);
  * @param fd The file descriptor to write to.
  */
 void	ft_putnbr_fd(int n, int fd);
+
+/**
+ * @ingroup output
+ * @brief Prints a formatted string to stdout.
+ * @param format The format string. All additional parameters
+ * are meant to replace conversion specifiers starting with "%".
+ * @returns On success, the function returns the number of
+ * bytes actually written.
+ *
+ * On error, the function returns -1.
+ */
+int		ft_printf(const char *format, ...);
 
 /**
  * @defgroup list Linked List Functions

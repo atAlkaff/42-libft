@@ -17,7 +17,11 @@ SRC = ft_isalpha.c ft_isdigit.c ft_isalnum.c ft_isascii.c ft_isprint.c \
 	ft_split.c ft_itoa.c ft_strmapi.c ft_striteri.c ft_putchar_fd.c \
 	ft_putstr_fd.c ft_putendl_fd.c ft_putnbr_fd.c ft_lstnew.c \
 	ft_lstadd_front.c ft_lstsize.c ft_lstlast.c ft_lstadd_back.c \
-	ft_lstdelone.c ft_lstclear.c ft_lstiter.c ft_lstmap.c
+	ft_lstdelone.c ft_lstclear.c ft_lstiter.c ft_lstmap.c \
+	ft_utoa_stack.c conv_len_c.c conv_len_d.c conv_len_p.c conv_len_s.c \
+	conv_len_u.c conv_len_x.c get_total_len.c count_digits.c load_conv_c.c \
+	load_conv_d.c load_conv_p.c load_conv_s.c load_conv_u.c load_conv_x.c \
+	load_conv_xx.c load_string.c
 
 # Object Files
 OBJ = $(SRC:.c=.o)

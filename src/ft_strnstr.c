@@ -6,7 +6,7 @@
 /*   By: aalkaff <aalkaff@student.42abudhabi.ae>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/28 21:19:59 by aalkaff           #+#    #+#             */
-/*   Updated: 2025/10/28 21:30:43 by aalkaff          ###   ########.fr       */
+/*   Updated: 2026/01/18 19:58:34 by aalkaff          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -106,26 +106,6 @@ static unsigned long	roll_hay_hash(unsigned long hash,
 	hash = (hash + RK_MOD - (char_out * power) % RK_MOD) % RK_MOD;
 	hash = (hash * RK_BASE + char_in) % RK_MOD;
 	return (hash);
-}
-
-/**
- * @internal
- * @brief Measures the length of @p , up to a maximum of @p n bytes.
- *
- * @param s The string to measure.
- * @param n The maximum number of bytes to check.
- * @return size_t The length of the string @p s (if a null-terminator is
- * found within @p n bytes), or @p n if no null-terminator
- * is found.
- */
-static size_t	ft_strnlen(const char *s, size_t n)
-{
-	size_t	i;
-
-	i = 0;
-	while (s[i] && i < n)
-		i++;
-	return (i);
 }
 
 char	*ft_strnstr(const char *haystack, const char *needle, size_t n)
