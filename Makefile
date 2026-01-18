@@ -9,7 +9,8 @@ LIB = ranlib
 # File Deletion Tool
 RM = rm -f
 
-SRC = ft_isalpha.c ft_isdigit.c ft_isalnum.c ft_isascii.c ft_isprint.c \
+# Sources
+SRC_FILES = ft_isalpha.c ft_isdigit.c ft_isalnum.c ft_isascii.c ft_isprint.c \
 	ft_strlen.c ft_strnlen.c ft_memset.c ft_bzero.c ft_memcpy.c ft_memmove.c \
 	ft_strlcpy.c ft_strlcat.c ft_toupper.c ft_tolower.c ft_strchr.c \
 	ft_strrchr.c ft_strncmp.c ft_memchr.c ft_memcmp.c ft_strnstr.c \
@@ -23,8 +24,16 @@ SRC = ft_isalpha.c ft_isdigit.c ft_isalnum.c ft_isascii.c ft_isprint.c \
 	load_conv_d.c load_conv_p.c load_conv_s.c load_conv_u.c load_conv_x.c \
 	load_conv_xx.c load_string.c
 
+SRC_DIR = src/
+
+SRC = $(addprefix $(SRC_DIR), $(SRC_FILES))
+
 # Object Files
 OBJ = $(SRC:.c=.o)
+
+# Includes
+INCLUDE_DIR = include/
+CFLAGS += -I $(INCLUDE_DIR)
 
 # Output File
 NAME = libft.a
