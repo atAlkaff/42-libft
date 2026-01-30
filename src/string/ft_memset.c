@@ -6,7 +6,7 @@
 /*   By: aalkaff <aalkaff@student.42abudhabi.ae>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/28 20:36:53 by aalkaff           #+#    #+#             */
-/*   Updated: 2025/10/28 20:38:09 by aalkaff          ###   ########.fr       */
+/*   Updated: 2026/01/30 22:27:18 by aalkaff          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,4 +25,9 @@ void	*ft_memset(void *ptr, int c, size_t len)
 		i++;
 	}
 	return (ptr);
+}
+
+void	ft_bzero(void *ptr, size_t len)
+{
+	ft_memset(ptr, 0, len);
 }
