@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aalkaff <aalkaff@student.42abudhabi.ae>    +#+  +:+       +#+        */
+/*   By: aalkaff <aalkaff@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/28 19:53:19 by aalkaff           #+#    #+#             */
-/*   Updated: 2026/01/18 19:48:37 by aalkaff          ###   ########.fr       */
+/*   Updated: 2026/01/31 18:01:41 by aalkaff          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,9 @@
 # define LIBFT_H
 
 # include <stddef.h>	// NULL and size_t
+
+int		ft_geterrno(void);
+void	ft_seterrno(int err);
 
 /**
  * @author Ahmed Alkaff
