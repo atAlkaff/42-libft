@@ -6,7 +6,7 @@
 /*   By: aalkaff <aalkaff@student.42abudhabi.ae>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/31 18:00:38 by aalkaff           #+#    #+#             */
-/*   Updated: 2026/01/31 18:10:48 by aalkaff          ###   ########.fr       */
+/*   Updated: 2026/01/31 18:52:22 by aalkaff          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,8 @@
 
 static int	ft_errno(int mode, int err)
 {
-	static int code;
+	static int	code;
+
 	if (mode == FT_GETERRNO)
 		return (code);
 	if (mode == FT_SETERRNO)

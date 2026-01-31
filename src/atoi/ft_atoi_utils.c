@@ -6,7 +6,7 @@
 /*   By: aalkaff <aalkaff@student.42abudhabi.ae>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/30 21:21:02 by aalkaff           #+#    #+#             */
-/*   Updated: 2026/01/30 22:17:34 by aalkaff          ###   ########.fr       */
+/*   Updated: 2026/01/31 18:53:37 by aalkaff          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,6 @@ static void	extract_base(t_atoi_parts *atoi_struct, unsigned int base)
 	{
 		if (atoi_struct->nptr[0] == '0')
 		{
-
 			if ((atoi_struct->nptr[1] | 0x20) == 'x')
 				base = 16;
 			else
