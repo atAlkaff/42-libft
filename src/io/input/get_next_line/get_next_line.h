@@ -6,7 +6,7 @@
 /*   By: aalkaff <aalkaff@student.42abudhabi.ae>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/20 16:52:55 by aalkaff           #+#    #+#             */
-/*   Updated: 2026/01/31 20:10:20 by aalkaff          ###   ########.fr       */
+/*   Updated: 2026/01/31 20:13:26 by aalkaff          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,9 +55,6 @@ typedef struct s_vector
 	 */
 	size_t	capacity;
 }	t_vector;
-
-
-void	*ft_realloc(void *ptr, size_t old_size, size_t new_size);
 
 /**
  * @brief Initializes a @ref t_vector struct.
