@@ -11,18 +11,27 @@ RM = rm -f
 
 # Sources
 SRC_FILES = ctype/ctype_class.c ctype/ctype_convert.c \
-	ft_strlen.c ft_strnlen.c ft_memset.c ft_bzero.c ft_memcpy.c ft_memmove.c \
-	ft_strlcpy.c ft_strlcat.c ft_strchr.c \
-	ft_strrchr.c ft_strncmp.c ft_memchr.c ft_memcmp.c ft_strnstr.c \
-	ft_atoi.c ft_calloc.c ft_strdup.c ft_substr.c ft_strjoin.c ft_strtrim.c \
-	ft_split.c ft_itoa.c ft_strmapi.c ft_striteri.c ft_putchar_fd.c \
-	ft_putstr_fd.c ft_putendl_fd.c ft_putnbr_fd.c ft_lstnew.c \
-	ft_lstadd_front.c ft_lstsize.c ft_lstlast.c ft_lstadd_back.c \
-	ft_lstdelone.c ft_lstclear.c ft_lstiter.c ft_lstmap.c \
-	ft_utoa_stack.c conv_len_c.c conv_len_d.c conv_len_p.c conv_len_s.c \
-	conv_len_u.c conv_len_x.c get_total_len.c count_digits.c load_conv_c.c \
-	load_conv_d.c load_conv_p.c load_conv_s.c load_conv_u.c load_conv_x.c \
-	load_conv_xx.c load_string.c
+	atoi/ft_strtol.c atoi/ft_atoi_utils.c \
+	errno/ft_errno.c \
+	io/input/get_next_line/get_next_line.c io/input/get_next_line/get_next_line_utils.c \
+	io/output/ft_putchar_fd.c io/output/ft_putstr_fd.c io/output/ft_putnbr_fd.c \
+	list/ft_lstadd.c list/ft_lstclear.c list/ft_lstiter.c list/ft_lstlast.c list/ft_lstmap.c \
+	list/ft_lstnew.c list/ft_lstsize.c \
+	malloc/ft_calloc.c malloc/ft_realloc.c \
+	printf/counters/conv_len_c.c printf/counters/conv_len_d.c printf/counters/conv_len_p.c \
+	printf/counters/conv_len_s.c printf/counters/conv_len_u.c printf/counters/conv_len_x.c \
+	printf/counters/get_total_len.c \
+	printf/loaders/load_conv_c.c printf/loaders/load_conv_d.c printf/loaders/load_conv_p.c \
+	printf/loaders/load_conv_s.c printf/loaders/load_conv_u.c printf/loaders/load_conv_x.c \
+	printf/loaders/load_conv_xx.c printf/loaders/load_string.c \
+	printf/count_digits.c printf/ft_utoa_stack.c \
+	string/ft_memcpy.c string/ft_memset.c string/ft_strcat.c string/ft_strchr.c string/ft_strcmp.c \
+	string/ft_strdup.c string/ft_strlen.c string/ft_strnstr.c \
+	stringx/ft_split.c stringx/ft_striteri.c stringx/ft_strjoin.c stringx/ft_strmapi.c \
+	stringx/ft_strtrim.c stringx/ft_substr.c \
+	utils/arithmetic.c \
+	ft_itoa.c
+
 
 SRC_DIR = src/
 
@@ -34,6 +43,9 @@ OBJ = $(SRC:.c=.o)
 # Includes
 INCLUDE_DIR = include/
 CFLAGS += -I $(INCLUDE_DIR)
+
+# Internal includes
+CFLAGS += -I src/printf/
 
 # Output File
 NAME = libft.a

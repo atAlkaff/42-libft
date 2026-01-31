@@ -6,7 +6,7 @@
 /*   By: aalkaff <aalkaff@student.42abudhabi.ae>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/28 21:10:51 by aalkaff           #+#    #+#             */
-/*   Updated: 2026/01/31 18:54:21 by aalkaff          ###   ########.fr       */
+/*   Updated: 2026/01/31 20:54:14 by aalkaff          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,7 +56,7 @@ long	ft_strtol(const char *nptr, char **endptr, int base)
 	if ((unsigned)digit >= atoi_struct.base)
 	{
 		if (endptr)
-			*endptr = nptr;
+			*endptr = (char *) nptr;
 		return (0);
 	}
 	while ((unsigned)digit < atoi_struct.base)
@@ -66,7 +66,7 @@ long	ft_strtol(const char *nptr, char **endptr, int base)
 		digit = get_digit_value(*atoi_struct.nptr++);
 	}
 	if (endptr)
-		*endptr = atoi_struct.nptr - 1;
+		*endptr = (char *) atoi_struct.nptr - 1;
 	return (atoi_struct.result);
 }
 
