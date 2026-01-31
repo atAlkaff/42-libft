@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aalkaff <aalkaff@student.42.fr>            +#+  +:+       +#+        */
+/*   By: aalkaff <aalkaff@student.42abudhabi.ae>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/28 19:53:19 by aalkaff           #+#    #+#             */
-/*   Updated: 2026/01/31 18:01:41 by aalkaff          ###   ########.fr       */
+/*   Updated: 2026/01/31 20:12:13 by aalkaff          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@
 
 int		ft_geterrno(void);
 void	ft_seterrno(int err);
+
+size_t	next_power_of_two(size_t n);
 
 /**
  * @author Ahmed Alkaff
@@ -176,6 +178,23 @@ char	*ft_itoa(int n);
  * On error, the function returns NULL.
  */
 void	*ft_calloc(size_t nelem, size_t elsize);
+
+/**
+ * @ingroup malloc
+ * @brief Reallocates @p ptr to @p new_size and preserves its old data.
+ * @param ptr The original pointer.
+ * @param old_size The amount of memory allocated to the original buffer,
+ * in bytes.
+ * @param new_size The amount of memory to be allocated to the new
+ * buffer, in bytes.
+ * @returns On success, the function returns a pointer to a new buffer of
+ * size @p new_size containing the data previously stored in @p ptr and
+ * frees @p ptr.
+ *
+ * On error, the function returns NULL and the caller is responsible for
+ * freeing @p ptr.
+ */
+void	*ft_realloc(void *ptr, size_t old_size, size_t new_size);
 
 /**
  * @defgroup string
@@ -469,6 +488,24 @@ char	*ft_strmapi(const char *s, char (*f)(unsigned int, char));
 /**
  * @defgroup io Input / Output Functions
  */
+
+/**
+ * @ingroup io
+ * @defgroup input Input Functions
+ * @details These functions read data from a file descriptor.
+ */
+
+/**
+ * @ingroup input
+ * @brief Attempts to allocate and return the next line of the file
+ * referred to by @p fd.
+ * @param fd The file descriptor.
+ * @returns On success, the function returns the next line of the file
+ * referred to by @p fd or NULL if there are no more lines to read.
+ *
+ * On error, the function returns NULL.
+ */
+char	*get_next_line(int fd);
 
 /**
  * @ingroup io
