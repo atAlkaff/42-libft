@@ -23,13 +23,14 @@ SRC_FILES = ctype/ctype_class.c ctype/ctype_convert.c \
 	printf/counters/get_total_len.c \
 	printf/loaders/load_conv_c.c printf/loaders/load_conv_d.c printf/loaders/load_conv_p.c \
 	printf/loaders/load_conv_s.c printf/loaders/load_conv_u.c printf/loaders/load_conv_x.c \
-	printf/loaders/load_conv_xx.c printf/loaders/load_string.c \
-	printf/count_digits.c printf/ft_utoa_stack.c \
+	printf/loaders/dispatch_conversion.c \
+	printf/count_digits.c \
+	printf/ft_printf.c printf/ft_dprintf.c printf/ft_sprintf.c printf/ft_snprintf.c \
 	string/ft_memcpy.c string/ft_memset.c string/ft_strcat.c string/ft_strchr.c string/ft_strcmp.c \
 	string/ft_strdup.c string/ft_strlen.c string/ft_strnstr.c \
 	stringx/ft_split.c stringx/ft_striteri.c stringx/ft_strjoin.c stringx/ft_strmapi.c \
 	stringx/ft_strtrim.c stringx/ft_substr.c \
-	utils/arithmetic.c \
+	utils/arithmetic.c utils/comparisons.c \
 	ft_itoa.c
 
 

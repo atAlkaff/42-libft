@@ -1,22 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putchar_fd.c                                    :+:      :+:    :+:   */
+/*   comparisons.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aalkaff <aalkaff@student.42abudhabi.ae>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/29 22:04:49 by aalkaff           #+#    #+#             */
-/*   Updated: 2026/02/01 20:11:19 by aalkaff          ###   ########.fr       */
+/*   Created: 2026/02/01 18:48:06 by aalkaff           #+#    #+#             */
+/*   Updated: 2026/02/01 18:49:36 by aalkaff          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <unistd.h>	// write
 
-void	ft_putchar_fd(char c, int fd)
+long	imin(long a, long b)
 {
-	ssize_t	bytes;
+	if (a < b)
+		return (a);
+	return (b);
+}
 
-	bytes = write(fd, &c, 1);
-	(void)bytes;
+long	imax(long a, long b)
+{
+	if (a > b)
+		return (a);
+	return (b);
+}
+
+unsigned long	min(unsigned long a, unsigned long b)
+{
+	if (a < b)
+		return (a);
+	return (b);
+}
+
+unsigned long	max(unsigned long a, unsigned long b)
+{
+	if (a > b)
+		return (a);
+	return (b);
 }

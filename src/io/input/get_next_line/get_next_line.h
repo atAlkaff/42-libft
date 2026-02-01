@@ -6,12 +6,12 @@
 /*   By: aalkaff <aalkaff@student.42abudhabi.ae>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/20 16:52:55 by aalkaff           #+#    #+#             */
-/*   Updated: 2026/01/31 20:13:26 by aalkaff          ###   ########.fr       */
+/*   Updated: 2026/02/01 19:59:00 by aalkaff          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef GET_NEXT_LINE_BONUS_H
-# define GET_NEXT_LINE_BONUS_H
+#ifndef GET_NEXT_LINE_H
+# define GET_NEXT_LINE_H
 
 # include <stddef.h>
 

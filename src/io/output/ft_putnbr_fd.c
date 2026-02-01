@@ -6,7 +6,7 @@
 /*   By: aalkaff <aalkaff@student.42abudhabi.ae>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/29 22:16:46 by aalkaff           #+#    #+#             */
-/*   Updated: 2025/10/29 22:19:41 by aalkaff          ###   ########.fr       */
+/*   Updated: 2026/02/01 20:13:17 by aalkaff          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,6 +36,7 @@ void	ft_putnbr_fd(int n, int fd)
 {
 	char	digits[22];
 	char	negative;
+	ssize_t	bytes;
 	size_t	i;
 
 	digits[21] = 0;
@@ -53,5 +54,6 @@ void	ft_putnbr_fd(int n, int fd)
 	i = get_digits(digits, i, n);
 	if (negative)
 		digits[i--] = '-';
-	write(fd, digits + i + 1, 20 - i);
+	bytes = write(fd, digits + i + 1, 20 - i);
+	(void)bytes;
 }

@@ -6,7 +6,7 @@
 /*   By: aalkaff <aalkaff@student.42abudhabi.ae>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/04 09:03:35 by aalkaff           #+#    #+#             */
-/*   Updated: 2026/01/18 19:47:33 by aalkaff          ###   ########.fr       */
+/*   Updated: 2026/02/01 20:05:04 by aalkaff          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -163,33 +163,6 @@ typedef struct s_hex_parts
 }	t_hex_parts;
 
 /**
- * @brief Loads @p n into @p buf, up to a total of @p ndigits,
- * as a lowercase hexadecimal number.
- * @param buf The buffer to store data into.
- * @param n The number to write.
- * @param ndigits The number of digits needed to print @p n.
- */
-void		ft_xtoa_stack(char *buf, unsigned long n, size_t ndigits);
-
-/**
- * @brief Loads @p n into @p buf, up to a total of @p ndigits,
- * as an uppercase hexadecimal number.
- * @param buf The buffer to store data into.
- * @param n The number to write.
- * @param ndigits The number of digits needed to print @p n.
- */
-void		ft_xxtoa_stack(char *buf, unsigned long n, size_t ndigits);
-
-/**
- * @brief Loads @p n into @p buf, up to a total of @p ndigits,
- * as a decimal number.
- * @param buf The buffer to store data into.
- * @param n The number to write.
- * @param ndigits The number of digits needed to print @p n.
- */
-void		ft_utoa_stack(char *buf, unsigned long n, size_t ndigits);
-
-/**
  * @brief Counts the number of digits it would take to print
  * @p n as a base 10 unsigned integer.
  * @param n The number whose digits will be counted.
@@ -280,14 +253,6 @@ size_t		conv_len_p(const t_format *f, const void *p);
 size_t		conv_len_x(const t_format *f, unsigned int x);
 
 /**
- * @brief Loads the entire formatted string into a buffer.
- * @param buf The buffer to store the output.
- * @param format The format string.
- * @param args The va_list from @ref ft_printf.
- */
-void		load_string(char *buf, const char *format, va_list args);
-
-/**
  * @brief Loads a "%c" conversion's output into a buffer.
  * @param buf The output buffer.
  * @param f The printing options.
@@ -295,7 +260,7 @@ void		load_string(char *buf, const char *format, va_list args);
  * @returns A pointer to the first location in @p buf after the
  * conversion's output.
  */
-char		*load_conv_c(char *buf, const t_format *f, char c);
+char		*load_conv_c(char *buf, size_t n, const t_format *f, char c);
 
 /**
  * @brief Loads a "%s" conversion's output into a buffer.
@@ -305,7 +270,7 @@ char		*load_conv_c(char *buf, const t_format *f, char c);
  * @returns A pointer to the first location in @p buf after the
  * conversion's output.
  */
-char		*load_conv_s(char *buf, const t_format *f, const char *s);
+char		*load_conv_s(char *buf, size_t n, const t_format *f, const char *s);
 
 /**
  * @brief Loads a "%p" conversion's output into a buffer.
@@ -315,7 +280,7 @@ char		*load_conv_s(char *buf, const t_format *f, const char *s);
  * @returns A pointer to the first location in @p buf after the
  * conversion's output.
  */
-char		*load_conv_p(char *buf, const t_format *f, void *p);
+char		*load_conv_p(char *buf, size_t n, const t_format *f, void *p);
 
 /**
  * @brief Loads a "%d" or "%i" conversion's output into a buffer.
@@ -325,7 +290,7 @@ char		*load_conv_p(char *buf, const t_format *f, void *p);
  * @returns A pointer to the first location in @p buf after the
  * conversion's output.
  */
-char		*load_conv_d(char *buf, const t_format *f, int u);
+char		*load_conv_d(char *buf, size_t n, const t_format *f, int u);
 
 /**
  * @brief Loads a "%u" conversion's output into a buffer.
@@ -335,7 +300,8 @@ char		*load_conv_d(char *buf, const t_format *f, int u);
  * @returns A pointer to the first location in @p buf after the
  * conversion's output.
  */
-char		*load_conv_u(char *buf, const t_format *f, unsigned int u);
+char		*load_conv_u(char *buf, size_t n,
+				const t_format *f, unsigned int u);
 
 /**
  * @brief Loads a "%x" conversion's output into a buffer.
@@ -345,7 +311,8 @@ char		*load_conv_u(char *buf, const t_format *f, unsigned int u);
  * @returns A pointer to the first location in @p buf after the
  * conversion's output.
  */
-char		*load_conv_x(char *buf, const t_format *f, unsigned int u);
+char		*load_conv_x(char *buf, size_t n,
+				const t_format *f, unsigned int u);
 
 /**
  * @brief Loads a "%X" conversion's output into a buffer.
@@ -355,6 +322,9 @@ char		*load_conv_x(char *buf, const t_format *f, unsigned int u);
  * @returns A pointer to the first location in @p buf after the
  * conversion's output.
  */
-char		*load_conv_xx(char *buf, const t_format *f, unsigned int u);
+char		*load_conv_xx(char *buf, size_t n,
+				const t_format *f, unsigned int u);
+
+char		*dispatch_conversion(char *buf, size_t n, t_format *f, va_list ap);
 
 #endif

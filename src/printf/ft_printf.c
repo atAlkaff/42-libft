@@ -1,22 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putchar_fd.c                                    :+:      :+:    :+:   */
+/*   ft_printf.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aalkaff <aalkaff@student.42abudhabi.ae>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/29 22:04:49 by aalkaff           #+#    #+#             */
-/*   Updated: 2026/02/01 20:11:19 by aalkaff          ###   ########.fr       */
+/*   Created: 2026/02/01 16:52:34 by aalkaff           #+#    #+#             */
+/*   Updated: 2026/02/01 18:09:50 by aalkaff          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <unistd.h>	// write
+#include "ft_printf.h"
+#include <stdlib.h>
+#include <unistd.h>
+#include <limits.h>
 
-void	ft_putchar_fd(char c, int fd)
+int	ft_printf(const char *format, ...)
 {
-	ssize_t	bytes;
+	va_list	args;
+	int		len;
 
-	bytes = write(fd, &c, 1);
-	(void)bytes;
+	va_start(args, format);
+	len = ft_vprintf(format, args);
+	va_end(args);
+	return (len);
+}
+
+int	ft_vprintf(const char *format, va_list args)
+{
+	return (ft_vdprintf(STDOUT_FILENO, format, args));
 }

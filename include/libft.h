@@ -6,7 +6,7 @@
 /*   By: aalkaff <aalkaff@student.42abudhabi.ae>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/28 19:53:19 by aalkaff           #+#    #+#             */
-/*   Updated: 2026/01/31 20:12:13 by aalkaff          ###   ########.fr       */
+/*   Updated: 2026/02/01 20:05:32 by aalkaff          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,19 +14,25 @@
 # define LIBFT_H
 
 # include <stddef.h>	// NULL and size_t
+# include <stdarg.h>	// va_list
 
-int		ft_geterrno(void);
-void	ft_seterrno(int err);
+int				ft_geterrno(void);
+void			ft_seterrno(int err);
 
-size_t	next_power_of_two(size_t n);
+size_t			next_power_of_two(size_t n);
+long			imin(long a, long b);
+long			imax(long a, long b);
+unsigned long	min(unsigned long a, unsigned long b);
+unsigned long	max(unsigned long a, unsigned long b);
 
-/**
- * @author Ahmed Alkaff
- *
- * @mainpage
- * These functions are the libft interface required by Project
- * Specification Version 18 (2025).
- */
+int				ft_vprintf(const char *format, va_list args);
+int				ft_sprintf(char *str, const char *format, ...);
+int				ft_vsprintf(char *str, const char *format, va_list args);
+int				ft_dprintf(int fd, const char *format, ...);
+int				ft_vdprintf(int fd, const char *format, va_list args);
+int				ft_snprintf(char *str, size_t n, const char *format, ...);
+int				ft_vsnprintf(char *str, size_t n, const char *format,
+					va_list args);
 
 /**
  * @defgroup ctype Character Classification and Conversion Functions
@@ -50,7 +56,7 @@ size_t	next_power_of_two(size_t n);
  * @retval 1 @p c is alphabetical.
  * @retval 0 @p c is not alphabetical.
  */
-int		ft_isalpha(int c);
+int				ft_isalpha(int c);
 
 /**
  * @ingroup ctype_class
@@ -60,7 +66,7 @@ int		ft_isalpha(int c);
  * @retval 1 @p c is a digit.
  * @retval 0 @p c is not a digit.
  */
-int		ft_isdigit(int c);
+int				ft_isdigit(int c);
 
 /**
  * @ingroup ctype_class
@@ -70,7 +76,7 @@ int		ft_isdigit(int c);
  * @retval 1 @p c is alphanumeric.
  * @retval 0 @p c is not alphanumeric.
  */
-int		ft_isalnum(int c);
+int				ft_isalnum(int c);
 
 /**
  * @ingroup ctype_class
@@ -80,7 +86,7 @@ int		ft_isalnum(int c);
  * @retval 1 @p c is printable.
  * @retval 0 @p c is not printable.
  */
-int		ft_isprint(int c);
+int				ft_isprint(int c);
 
 /**
  * @ingroup ctype_class
@@ -89,7 +95,7 @@ int		ft_isprint(int c);
  * @retval 1 @p c is an ASCII character.
  * @retval 0 @p c is not an ASCII character.
  */
-int		ft_isascii(int c);
+int				ft_isascii(int c);
 
 /**
  * @ingroup ctype
@@ -108,7 +114,7 @@ int		ft_isascii(int c);
  * @returns The uppercase equivalent of @p c if one exists, or
  * @p c otherwise.
  */
-int		ft_toupper(int c);
+int				ft_toupper(int c);
 
 /**
  * @ingroup ctype_convert
@@ -118,7 +124,7 @@ int		ft_toupper(int c);
  * @returns The lowercase equivalent of @p c if one exists, or
  * @p c otherwise.
  */
-int		ft_tolower(int c);
+int				ft_tolower(int c);
 
 /**
  * @defgroup string_integer String / Integer Converters
@@ -143,7 +149,7 @@ int		ft_tolower(int c);
  * @retval `(int)LONG_MAX` @p nptr represented a positive value too
  * large to be represented as `long`.
  */
-int		ft_atoi(const char *nptr);
+int				ft_atoi(const char *nptr);
 
 /**
  * @ingroup string_integer
@@ -155,7 +161,7 @@ int		ft_atoi(const char *nptr);
  *
  * On error, the functions returns NULL.
  */
-char	*ft_itoa(int n);
+char			*ft_itoa(int n);
 
 /**
  * @defgroup malloc Memory Allocators
@@ -177,7 +183,7 @@ char	*ft_itoa(int n);
  *
  * On error, the function returns NULL.
  */
-void	*ft_calloc(size_t nelem, size_t elsize);
+void			*ft_calloc(size_t nelem, size_t elsize);
 
 /**
  * @ingroup malloc
@@ -194,7 +200,7 @@ void	*ft_calloc(size_t nelem, size_t elsize);
  * On error, the function returns NULL and the caller is responsible for
  * freeing @p ptr.
  */
-void	*ft_realloc(void *ptr, size_t old_size, size_t new_size);
+void			*ft_realloc(void *ptr, size_t old_size, size_t new_size);
 
 /**
  * @defgroup string
@@ -216,7 +222,7 @@ void	*ft_realloc(void *ptr, size_t old_size, size_t new_size);
  * @param len The number of bytes to set.
  * @returns @p ptr
  */
-void	*ft_memset(void *ptr, int c, size_t len);
+void			*ft_memset(void *ptr, int c, size_t len);
 
 /**
  * @ingroup memset
@@ -224,7 +230,7 @@ void	*ft_memset(void *ptr, int c, size_t len);
  * @param ptr The memory region.
  * @param len The number of bytes to set.
  */
-void	ft_bzero(void *ptr, size_t len);
+void			ft_bzero(void *ptr, size_t len);
 
 /**
  * @ingroup string
@@ -242,7 +248,7 @@ void	ft_bzero(void *ptr, size_t len);
  * @param n The number of bytes to copy.
  * @returns @p dst
  */
-void	*ft_memcpy(void *dst, const void *src, size_t n);
+void			*ft_memcpy(void *dst, const void *src, size_t n);
 
 /**
  * @ingroup memcpy
@@ -255,7 +261,7 @@ void	*ft_memcpy(void *dst, const void *src, size_t n);
  * @param n The number of bytes to copy.
  * @returns @p dst
  */
-void	*ft_memmove(void *dst, const void *src, size_t n);
+void			*ft_memmove(void *dst, const void *src, size_t n);
 
 /**
  * @ingroup memcpy
@@ -265,7 +271,7 @@ void	*ft_memmove(void *dst, const void *src, size_t n);
  * @param dsize The maximum size of the destination buffer in bytes.
  * @returns The length of @p src.
  */
-size_t	ft_strlcpy(char *dst, const char *src, size_t dsize);
+size_t			ft_strlcpy(char *dst, const char *src, size_t dsize);
 
 /**
  * @ingroup string
@@ -283,7 +289,7 @@ size_t	ft_strlcpy(char *dst, const char *src, size_t dsize);
  * @returns The length of @p src, plus the length of @p dst or @p dsize
  * whichever is greater.
  */
-size_t	ft_strlcat(char *dst, const char *src, size_t dsize);
+size_t			ft_strlcat(char *dst, const char *src, size_t dsize);
 
 /**
  * @ingroup string
@@ -297,7 +303,7 @@ size_t	ft_strlcat(char *dst, const char *src, size_t dsize);
  * @returns The duplicate if one was created, or NULL if the allocation
  * failed.
  */
-char	*ft_strdup(const char *s);
+char			*ft_strdup(const char *s);
 
 /**
  * @ingroup string
@@ -313,7 +319,7 @@ char	*ft_strdup(const char *s);
  * @returns The first occurrence of the low byte of @p c in the first @p len
  * bytes starting at @p s, or NULL if the byte was not found.
  */
-void	*ft_memchr(const void *ptr, int c, size_t len);
+void			*ft_memchr(const void *ptr, int c, size_t len);
 
 /**
  * @ingroup strchr
@@ -323,7 +329,7 @@ void	*ft_memchr(const void *ptr, int c, size_t len);
  * @returns The first occurrence of the low byte of @p c in @p s,
  * or NULL if the character was not found.
  */
-char	*ft_strchr(const char *s, int c);
+char			*ft_strchr(const char *s, int c);
 
 /**
  * @ingroup strchr
@@ -333,7 +339,7 @@ char	*ft_strchr(const char *s, int c);
  * @returns The last occurrence of the low byte of @p c in @p s,
  * or NULL if the character was not found.
  */
-char	*ft_strrchr(const char *s, int c);
+char			*ft_strrchr(const char *s, int c);
 
 /**
  * @ingroup strchr
@@ -344,7 +350,7 @@ char	*ft_strrchr(const char *s, int c);
  * @returns The first occurrence of @p needle in @p haystack, or NULL
  * if it was not found.
  */
-char	*ft_strnstr(const char *haystack, const char *needle, size_t n);
+char			*ft_strnstr(const char *haystack, const char *needle, size_t n);
 
 /**
  * @ingroup strchr
@@ -352,7 +358,7 @@ char	*ft_strnstr(const char *haystack, const char *needle, size_t n);
  * @param s The string to search.
  * @returns The length of the string in bytes.
  */
-size_t	ft_strlen(const char *s);
+size_t			ft_strlen(const char *s);
 
 /**
  * @ingroup strchr
@@ -363,7 +369,7 @@ size_t	ft_strlen(const char *s);
  * @returns The length of the string in bytes, or @p n, whichever
  * is greater.
  */
-size_t	ft_strnlen(const char *s, size_t n);
+size_t			ft_strnlen(const char *s, size_t n);
 
 /**
  * @ingroup string
@@ -380,7 +386,7 @@ size_t	ft_strnlen(const char *s, size_t n);
  * @returns The difference in the first unequal bytes of the two
  * regions, or 0 if the regions have exactly the same data.
  */
-int		ft_memcmp(const void *p1, const void *p2, size_t len);
+int				ft_memcmp(const void *p1, const void *p2, size_t len);
 
 /**
  * @ingroup strcmp
@@ -392,7 +398,7 @@ int		ft_memcmp(const void *p1, const void *p2, size_t len);
  * @returns The difference in the first unequal characters, or
  * 0 if the strings are equal.
  */
-int		ft_strncmp(const char *s1, const char *s2, size_t len);
+int				ft_strncmp(const char *s1, const char *s2, size_t len);
 
 /**
  * @defgroup stringx 42 String Extensions
@@ -415,7 +421,7 @@ int		ft_strncmp(const char *s1, const char *s2, size_t len);
  *
  * On error, the function returns NULL.
  */
-char	*ft_substr(const char *s, unsigned int start, size_t len);
+char			*ft_substr(const char *s, unsigned int start, size_t len);
 
 /**
  * @ingroup substr
@@ -427,7 +433,7 @@ char	*ft_substr(const char *s, unsigned int start, size_t len);
  *
  * On error, the function returns NULL.
  */
-char	*ft_strtrim(const char *s1, const char *set);
+char			*ft_strtrim(const char *s1, const char *set);
 
 /**
  * @ingroup stringx
@@ -444,7 +450,7 @@ char	*ft_strtrim(const char *s1, const char *set);
  *
  * On error, the function returns NULL.
  */
-char	*ft_strjoin(const char *prefix, const char *suffix);
+char			*ft_strjoin(const char *prefix, const char *suffix);
 
 /**
  * @ingroup strjoinsplit
@@ -457,7 +463,7 @@ char	*ft_strjoin(const char *prefix, const char *suffix);
  *
  * On error, the function returns NULL.
  */
-char	**ft_split(const char *s, char c);
+char			**ft_split(const char *s, char c);
 
 /**
  * @ingroup stringx
@@ -471,7 +477,7 @@ char	**ft_split(const char *s, char c);
  * @param s The string to iterate over.
  * @param f The function to apply to each character.
  */
-void	ft_striteri(char *s, void (*f)(unsigned int, char *));
+void			ft_striteri(char *s, void (*f)(unsigned int, char *));
 
 /**
  * @ingroup striteri
@@ -483,7 +489,7 @@ void	ft_striteri(char *s, void (*f)(unsigned int, char *));
  *
  * On error, the function returns NULL.
  */
-char	*ft_strmapi(const char *s, char (*f)(unsigned int, char));
+char			*ft_strmapi(const char *s, char (*f)(unsigned int, char));
 
 /**
  * @defgroup io Input / Output Functions
@@ -505,7 +511,7 @@ char	*ft_strmapi(const char *s, char (*f)(unsigned int, char));
  *
  * On error, the function returns NULL.
  */
-char	*get_next_line(int fd);
+char			*get_next_line(int fd);
 
 /**
  * @ingroup io
@@ -519,7 +525,7 @@ char	*get_next_line(int fd);
  * @param c The character to write.
  * @param fd The file descriptor to write to.
  */
-void	ft_putchar_fd(char c, int fd);
+void			ft_putchar_fd(char c, int fd);
 
 /**
  * @ingroup output
@@ -530,7 +536,7 @@ void	ft_putchar_fd(char c, int fd);
  * by specification. The caller may assume this function does not modify
  * @p s and treat that parameter as if it were of type `const char *`.
  */
-void	ft_putstr_fd(char *s, int fd);
+void			ft_putstr_fd(char *s, int fd);
 
 /**
  * @ingroup output
@@ -541,7 +547,7 @@ void	ft_putstr_fd(char *s, int fd);
  * by specification. The caller may assume this function does not modify
  * @p s and treat that parameter as if it were of type `const char *`.
  */
-void	ft_putendl_fd(char *s, int fd);
+void			ft_putendl_fd(char *s, int fd);
 
 /**
  * @ingroup output
@@ -550,7 +556,7 @@ void	ft_putendl_fd(char *s, int fd);
  * @param n The number to write.
  * @param fd The file descriptor to write to.
  */
-void	ft_putnbr_fd(int n, int fd);
+void			ft_putnbr_fd(int n, int fd);
 
 /**
  * @ingroup output
@@ -562,7 +568,7 @@ void	ft_putnbr_fd(int n, int fd);
  *
  * On error, the function returns -1.
  */
-int		ft_printf(const char *format, ...);
+int				ft_printf(const char *format, ...);
 
 /**
  * @defgroup list Linked List Functions
@@ -593,7 +599,7 @@ typedef struct s_list
  *
  * On error, the function returns NULL.
  */
-t_list	*ft_lstnew(void *content);
+t_list			*ft_lstnew(void *content);
 
 /**
  * @ingroup list
@@ -601,7 +607,7 @@ t_list	*ft_lstnew(void *content);
  * @param lst A pointer to the start of the list.
  * @param elem The new node.
  */
-void	ft_lstadd_front(t_list **lst, t_list *elem);
+void			ft_lstadd_front(t_list **lst, t_list *elem);
 
 /**
  * @ingroup list
@@ -609,7 +615,7 @@ void	ft_lstadd_front(t_list **lst, t_list *elem);
  * @param lst A pointer to the start of the list.
  * @param elem The new node.
  */
-void	ft_lstadd_back(t_list **lst, t_list *elem);
+void			ft_lstadd_back(t_list **lst, t_list *elem);
 
 /**
  * @ingroup list
@@ -618,7 +624,7 @@ void	ft_lstadd_back(t_list **lst, t_list *elem);
  * @returns The number of nodes in the list starting
  * at @p lst.
  */
-int		ft_lstsize(t_list *lst);
+int				ft_lstsize(t_list *lst);
 
 /**
  * @ingroup list
@@ -627,7 +633,7 @@ int		ft_lstsize(t_list *lst);
  * @returns The last node in the list starting
  * at @p lst.
  */
-t_list	*ft_lstlast(t_list *lst);
+t_list			*ft_lstlast(t_list *lst);
 
 /**
  * @ingroup list
@@ -635,7 +641,7 @@ t_list	*ft_lstlast(t_list *lst);
  * @param lst The node to free.
  * @param del A function that frees the content of the node.
  */
-void	ft_lstdelone(t_list *lst, void (*del)(void *));
+void			ft_lstdelone(t_list *lst, void (*del)(void *));
 
 /**
  * @ingroup list
@@ -643,7 +649,7 @@ void	ft_lstdelone(t_list *lst, void (*del)(void *));
  * @param lst A pointer to the start of the list.
  * @param del A function that frees the content of a node.
  */
-void	ft_lstclear(t_list **lst, void (*del)(void *));
+void			ft_lstclear(t_list **lst, void (*del)(void *));
 
 /**
  * @ingroup list
@@ -651,7 +657,7 @@ void	ft_lstclear(t_list **lst, void (*del)(void *));
  * @param lst The start of the list.
  * @param f The function to be applied.
  */
-void	ft_lstiter(t_list *lst, void (*f)(void *));
+void			ft_lstiter(t_list *lst, void (*f)(void *));
 
 /**
  * @ingroup list
@@ -664,6 +670,7 @@ void	ft_lstiter(t_list *lst, void (*f)(void *));
  *
  * On error, the function returns NULL.
  */
-t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *));
+t_list			*ft_lstmap(t_list *lst, void *(*f)(void *),
+					void (*del)(void *));
 
 #endif
