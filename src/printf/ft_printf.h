@@ -6,7 +6,7 @@
 /*   By: aalkaff <aalkaff@student.42abudhabi.ae>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/04 09:03:35 by aalkaff           #+#    #+#             */
-/*   Updated: 2026/02/01 20:05:04 by aalkaff          ###   ########.fr       */
+/*   Updated: 2026/02/03 23:29:20 by aalkaff          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -312,17 +312,6 @@ char		*load_conv_u(char *buf, size_t n,
  * conversion's output.
  */
 char		*load_conv_x(char *buf, size_t n,
-				const t_format *f, unsigned int u);
-
-/**
- * @brief Loads a "%X" conversion's output into a buffer.
- * @param buf The output buffer.
- * @param f The printing options.
- * @param u The number to print.
- * @returns A pointer to the first location in @p buf after the
- * conversion's output.
- */
-char		*load_conv_xx(char *buf, size_t n,
 				const t_format *f, unsigned int u);
 
 char		*dispatch_conversion(char *buf, size_t n, t_format *f, va_list ap);

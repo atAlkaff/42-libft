@@ -18,6 +18,7 @@ SRC_FILES = ctype/ctype_class.c ctype/ctype_convert.c \
 	list/ft_lstadd.c list/ft_lstclear.c list/ft_lstiter.c list/ft_lstlast.c list/ft_lstmap.c \
 	list/ft_lstnew.c list/ft_lstsize.c \
 	malloc/ft_calloc.c malloc/ft_realloc.c \
+	printf/parser.c \
 	printf/counters/conv_len_c.c printf/counters/conv_len_d.c printf/counters/conv_len_p.c \
 	printf/counters/conv_len_s.c printf/counters/conv_len_u.c printf/counters/conv_len_x.c \
 	printf/counters/get_total_len.c \
