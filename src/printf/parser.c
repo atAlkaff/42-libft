@@ -6,10 +6,11 @@
 /*   By: aalkaff <aalkaff@student.42abudhabi.ae>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/07 12:46:10 by aalkaff           #+#    #+#             */
-/*   Updated: 2026/02/03 23:30:26 by aalkaff          ###   ########.fr       */
+/*   Updated: 2026/02/03 23:31:50 by aalkaff          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libft.h"
 #include "ft_printf.h"
 
 static const char	*parse_flags(const char *s, t_format *f)
@@ -85,7 +86,7 @@ static const char	*parse_precision(const char *s, t_format *f, va_list ap)
 
 const char	*parse_format(const char *s, t_format *f, va_list args)
 {
-	ft_bzero(f, sizeof(*f));
+	ft_memset(f, 0, sizeof(*f));
 	s = parse_flags(s, f);
 	if (*s != '.')
 		s = parse_width(s, f, args);
