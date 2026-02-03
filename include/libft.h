@@ -6,7 +6,7 @@
 /*   By: aalkaff <aalkaff@student.42abudhabi.ae>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/28 19:53:19 by aalkaff           #+#    #+#             */
-/*   Updated: 2026/02/01 20:05:32 by aalkaff          ###   ########.fr       */
+/*   Updated: 2026/02/03 23:43:12 by aalkaff          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,8 @@ int				ft_vdprintf(int fd, const char *format, va_list args);
 int				ft_snprintf(char *str, size_t n, const char *format, ...);
 int				ft_vsnprintf(char *str, size_t n, const char *format,
 					va_list args);
+int				ft_asprintf(char **strp, const char *format, ...);
+int				ft_vasprintf(char **strp, const char *format, va_list args);
 
 /**
  * @defgroup ctype Character Classification and Conversion Functions

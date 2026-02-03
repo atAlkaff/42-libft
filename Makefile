@@ -27,6 +27,7 @@ SRC_FILES = ctype/ctype_class.c ctype/ctype_convert.c \
 	printf/loaders/dispatch_conversion.c \
 	printf/count_digits.c \
 	printf/ft_printf.c printf/ft_dprintf.c printf/ft_sprintf.c printf/ft_snprintf.c \
+	printf/ft_asprintf.c \
 	string/ft_memcpy.c string/ft_memset.c string/ft_strcat.c string/ft_strchr.c string/ft_strcmp.c \
 	string/ft_strdup.c string/ft_strlen.c string/ft_strnstr.c \
 	stringx/ft_split.c stringx/ft_striteri.c stringx/ft_strjoin.c stringx/ft_strmapi.c \
