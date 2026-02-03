@@ -6,7 +6,7 @@
 /*   By: aalkaff <aalkaff@student.42abudhabi.ae>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/28 19:53:19 by aalkaff           #+#    #+#             */
-/*   Updated: 2026/02/03 23:43:12 by aalkaff          ###   ########.fr       */
+/*   Updated: 2026/02/03 23:56:46 by aalkaff          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,9 +15,6 @@
 
 # include <stddef.h>	// NULL and size_t
 # include <stdarg.h>	// va_list
-
-int				ft_geterrno(void);
-void			ft_seterrno(int err);
 
 size_t			next_power_of_two(size_t n);
 long			imin(long a, long b);
