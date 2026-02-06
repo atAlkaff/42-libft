@@ -12,7 +12,6 @@ RM = rm -f
 # Sources
 SRC_FILES = ctype/ctype_class.c ctype/ctype_convert.c \
 	atoi/ft_strtol.c atoi/ft_atoi_utils.c \
-	errno/ft_errno.c \
 	io/input/get_next_line/get_next_line.c io/input/get_next_line/get_next_line_utils.c \
 	io/output/ft_putchar_fd.c io/output/ft_putstr_fd.c io/output/ft_putnbr_fd.c \
 	list/ft_lstadd.c list/ft_lstclear.c list/ft_lstiter.c list/ft_lstlast.c list/ft_lstmap.c \
