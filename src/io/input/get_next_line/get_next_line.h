@@ -6,7 +6,7 @@
 /*   By: aalkaff <aalkaff@student.42abudhabi.ae>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/20 16:52:55 by aalkaff           #+#    #+#             */
-/*   Updated: 2026/02/01 19:59:00 by aalkaff          ###   ########.fr       */
+/*   Updated: 2026/02/06 14:10:16 by aalkaff          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@
 
 # ifndef BUFFER_SIZE
 /**
+ * @internal
  * @brief The number of bytes to read from the file descriptor.
  */
 #  define BUFFER_SIZE		4096
@@ -24,6 +25,7 @@
 
 # ifndef FD_MAX
 /**
+ * @internal
  * @brief The maximum number of file descriptors a process
  * can have at once.
  */
@@ -35,6 +37,7 @@
 # define GNL_REACHED_EOF	2
 
 /**
+ * @internal
  * @brief An analog to the C++ std::vector container that grows
  * geometrically and needs O(log n) allocation operations.
  */
@@ -57,6 +60,7 @@ typedef struct s_vector
 }	t_vector;
 
 /**
+ * @internal
  * @brief Initializes a @ref t_vector struct.
  * @param vec A pointer to the @ref t_vector struct.
  * @param stash The leftover stash from the previous @ref
@@ -70,6 +74,7 @@ typedef struct s_vector
 int		vec_init(t_vector *vec, char **stash);
 
 /**
+ * @internal
  * @brief Checks if @p vec has enough space to store an object sized
  * @p extra_bytes. If the space is not enough, the function doubles
  * the size of @p vec to assure safe loading.

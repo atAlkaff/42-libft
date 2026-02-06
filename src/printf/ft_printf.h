@@ -6,7 +6,7 @@
 /*   By: aalkaff <aalkaff@student.42abudhabi.ae>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/04 09:03:35 by aalkaff           #+#    #+#             */
-/*   Updated: 2026/02/03 23:29:20 by aalkaff          ###   ########.fr       */
+/*   Updated: 2026/02/06 14:08:00 by aalkaff          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,7 @@
  */
 
 /**
+ * @internal
  * @ingroup printf_flags
  * @brief Justifies content to the left if the conversion
  * length is less than the minimum width.
@@ -28,6 +29,7 @@
 # define FMT_LEFT_JUSTIFY 1
 
 /**
+ * @internal
  * @ingroup printf_flags
  * @brief Pads integer conversions with zeros on the left
  * unless left justify is specified.
@@ -35,30 +37,35 @@
 # define FMT_ZERO_PAD 2
 
 /**
+ * @internal
  * @ingroup printf_flags
  * @brief Enables precision.
  */
 # define FMT_PRECISION_ON 4
 
 /**
+ * @internal
  * @ingroup printf_flags
  * @brief Adds a space before positive signed numbers.
  */
 # define FMT_PLUS_SIGN_SPACE 8
 
 /**
+ * @internal
  * @ingroup printf_flags
  * @brief Always shows + signs before positive signed numbers.
  */
 # define FMT_PLUS_SIGN_SHOW 16
 
 /**
+ * @internal
  * @ingroup printf_flags
  * @brief Adds "0x" before hexadecimal conversions.
  */
 # define FMT_ALT_FORM 32
 
 /**
+ * @internal
  * @brief A printf format specifier.
  */
 typedef struct s_format
@@ -113,6 +120,7 @@ typedef struct s_format
 }	t_format;
 
 /**
+ * @internal
  * @brief A structure containing the parts of a decimal conversion.
  */
 typedef struct s_dec_parts
@@ -138,6 +146,7 @@ typedef struct s_dec_parts
 }	t_dec_parts;
 
 /**
+ * @internal
  * @brief A structure containing the parts of a hexadecimal conversion.
  */
 typedef struct s_hex_parts
@@ -163,6 +172,7 @@ typedef struct s_hex_parts
 }	t_hex_parts;
 
 /**
+ * @internal
  * @brief Counts the number of digits it would take to print
  * @p n as a base 10 unsigned integer.
  * @param n The number whose digits will be counted.
@@ -171,6 +181,7 @@ typedef struct s_hex_parts
 size_t		count_digits_10(unsigned long n);
 
 /**
+ * @internal
  * @brief Counts the number of digits it would take to print
  * @p n as a base 10 signed integer.
  * @param n The number whose digits will be counted.
@@ -179,6 +190,7 @@ size_t		count_digits_10(unsigned long n);
 size_t		count_digits_10i(long n);
 
 /**
+ * @internal
  * @brief Counts the number of digits it would take to print
  * @p n as a base 16 unsigned integer.
  * @param n The number whose digits will be counted.
@@ -187,6 +199,7 @@ size_t		count_digits_10i(long n);
 size_t		count_digits_16(unsigned long n);
 
 /**
+ * @internal
  * @brief Parses a region of the formatted string into format options.
  * @param s The format string region.
  * @param f The printing options.
@@ -197,6 +210,7 @@ size_t		count_digits_16(unsigned long n);
 const char	*parse_format(const char *s, t_format *f, va_list args);
 
 /**
+ * @internal
  * @brief Calculates the total length of the final formatted string
  * without writing it.
  * @param format The format string.
@@ -206,6 +220,7 @@ const char	*parse_format(const char *s, t_format *f, va_list args);
 size_t		get_total_len(const char *format, va_list args);
 
 /**
+ * @internal
  * @brief Calculates the length of a "%c" conversion.
  * @param f The printing options.
  * @returns The length to print, in bytes.
@@ -213,6 +228,7 @@ size_t		get_total_len(const char *format, va_list args);
 size_t		conv_len_c(const t_format *f);
 
 /**
+ * @internal
  * @brief Calculates the length of a "%d" or "%i" conversion.
  * @param f The printing options.
  * @param d The number to be printed.
@@ -221,6 +237,7 @@ size_t		conv_len_c(const t_format *f);
 size_t		conv_len_d(const t_format *f, int d);
 
 /**
+ * @internal
  * @brief Calculates the length of a "%u" conversion.
  * @param f The printing options.
  * @param u The number to be printed.
@@ -229,6 +246,7 @@ size_t		conv_len_d(const t_format *f, int d);
 size_t		conv_len_u(const t_format *f, unsigned int u);
 
 /**
+ * @internal
  * @brief Calculates the length of a "%s" conversion.
  * @param f The printing options.
  * @param s The string to be printed.
@@ -237,6 +255,7 @@ size_t		conv_len_u(const t_format *f, unsigned int u);
 size_t		conv_len_s(const t_format *f, const char *s);
 
 /**
+ * @internal
  * @brief Calculates the length of a "%p" conversion.
  * @param f The printing options.
  * @param p The address to be printed.
@@ -245,6 +264,7 @@ size_t		conv_len_s(const t_format *f, const char *s);
 size_t		conv_len_p(const t_format *f, const void *p);
 
 /**
+ * @internal
  * @brief Calculates the length of a "%x" or "%X" conversion.
  * @param f The printing options.
  * @param x The number to be printed.
@@ -253,6 +273,7 @@ size_t		conv_len_p(const t_format *f, const void *p);
 size_t		conv_len_x(const t_format *f, unsigned int x);
 
 /**
+ * @internal
  * @brief Loads a "%c" conversion's output into a buffer.
  * @param buf The output buffer.
  * @param f The printing options.
@@ -263,6 +284,7 @@ size_t		conv_len_x(const t_format *f, unsigned int x);
 char		*load_conv_c(char *buf, size_t n, const t_format *f, char c);
 
 /**
+ * @internal
  * @brief Loads a "%s" conversion's output into a buffer.
  * @param buf The output buffer.
  * @param f The printing options.
@@ -273,6 +295,7 @@ char		*load_conv_c(char *buf, size_t n, const t_format *f, char c);
 char		*load_conv_s(char *buf, size_t n, const t_format *f, const char *s);
 
 /**
+ * @internal
  * @brief Loads a "%p" conversion's output into a buffer.
  * @param buf The output buffer.
  * @param f The printing options.
@@ -283,6 +306,7 @@ char		*load_conv_s(char *buf, size_t n, const t_format *f, const char *s);
 char		*load_conv_p(char *buf, size_t n, const t_format *f, void *p);
 
 /**
+ * @internal
  * @brief Loads a "%d" or "%i" conversion's output into a buffer.
  * @param buf The output buffer.
  * @param f The printing options.
@@ -293,6 +317,7 @@ char		*load_conv_p(char *buf, size_t n, const t_format *f, void *p);
 char		*load_conv_d(char *buf, size_t n, const t_format *f, int u);
 
 /**
+ * @internal
  * @brief Loads a "%u" conversion's output into a buffer.
  * @param buf The output buffer.
  * @param f The printing options.
@@ -304,6 +329,7 @@ char		*load_conv_u(char *buf, size_t n,
 				const t_format *f, unsigned int u);
 
 /**
+ * @internal
  * @brief Loads a "%x" conversion's output into a buffer.
  * @param buf The output buffer.
  * @param f The printing options.
