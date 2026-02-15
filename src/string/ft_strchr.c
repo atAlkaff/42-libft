@@ -6,7 +6,7 @@
 /*   By: aalkaff <aalkaff@student.42abudhabi.ae>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/28 20:58:20 by aalkaff           #+#    #+#             */
-/*   Updated: 2026/01/30 22:35:11 by aalkaff          ###   ########.fr       */
+/*   Updated: 2026/02/15 15:23:52 by aalkaff          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,6 +39,17 @@ char	*ft_strrchr(const char *s, int c)
 	if (c == '\0')
 		return ((char *)s);
 	return (last);
+}
+
+char	*ft_strchrnul(const char *s, int c)
+{
+	while (*s)
+	{
+		if (*s == (char)c)
+			return ((char *)s);
+		s++;
+	}
+	return ((char *)s);
 }
 
 void	*ft_memchr(const void *ptr, int c, size_t len)

@@ -6,23 +6,12 @@
 /*   By: aalkaff <aalkaff@student.42abudhabi.ae>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/29 21:30:12 by aalkaff           #+#    #+#             */
-/*   Updated: 2026/02/15 15:23:05 by aalkaff          ###   ########.fr       */
+/*   Updated: 2026/02/15 15:23:42 by aalkaff          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include <stdlib.h>	// malloc, free
-
-char	*ft_strchrnul(const char *s, int c)
-{
-	while (*s)
-	{
-		if (*s == (char)c)
-			return ((char *)s);
-		s++;
-	}
-	return ((char *)s);
-}
 
 size_t	ft_count_words(const char *s, char c)
 {
