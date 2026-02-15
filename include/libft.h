@@ -6,7 +6,7 @@
 /*   By: aalkaff <aalkaff@student.42abudhabi.ae>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/28 19:53:19 by aalkaff           #+#    #+#             */
-/*   Updated: 2026/02/15 15:18:20 by aalkaff          ###   ########.fr       */
+/*   Updated: 2026/02/15 15:20:02 by aalkaff          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -110,6 +110,9 @@ char			*ft_strjoin(const char *prefix, const char *suffix);
  * by C or the ends of the string. Caller responsible for freeing.
  */
 char			**ft_split(const char *s, char c);
+
+/* Counts the number of words in S delimited by C or ends of string. */
+size_t			ft_count_words(const char *s, char c);
 
 /* Applies F to each character in S and its index. */
 void			ft_striteri(char *s, void (*f)(unsigned int, char *));

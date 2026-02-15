@@ -6,7 +6,7 @@
 /*   By: aalkaff <aalkaff@student.42abudhabi.ae>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/29 21:30:12 by aalkaff           #+#    #+#             */
-/*   Updated: 2025/10/29 21:56:56 by aalkaff          ###   ########.fr       */
+/*   Updated: 2026/02/15 15:19:36 by aalkaff          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@ static char	*ft_strchrnul(const char *s, int c)
  * @param c The delimiter character.
  * @returns The number of words in @p s.
  */
-static size_t	count_words(const char *s, char c)
+size_t	ft_count_words(const char *s, char c)
 {
 	size_t		nwords;
 	const char	*end;
@@ -111,7 +111,7 @@ char	**ft_split(const char *s, char c)
 
 	if (!s)
 		return (NULL);
-	words = malloc((count_words(s, c) + 1) * sizeof(char *));
+	words = malloc((ft_count_words(s, c) + 1) * sizeof(char *));
 	if (!words)
 		return (NULL);
 	i = 0;
