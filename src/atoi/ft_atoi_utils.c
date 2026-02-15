@@ -6,7 +6,7 @@
 /*   By: aalkaff <aalkaff@student.42abudhabi.ae>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/30 21:21:02 by aalkaff           #+#    #+#             */
-/*   Updated: 2026/01/31 18:53:37 by aalkaff          ###   ########.fr       */
+/*   Updated: 2026/02/15 19:58:19 by aalkaff          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,7 +53,7 @@ int	get_digit_value(char c)
 	if ((unsigned)(c - '0') < 10)
 		return (c - '0');
 	if ((unsigned)((c | 0x20) - 'a') < 26)
-		return ((c | 0x20) - 'a');
+		return ((c | 0x20) - 'a' + 10);
 	return (-1);
 }
 
