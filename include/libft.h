@@ -6,7 +6,7 @@
 /*   By: aalkaff <aalkaff@student.42abudhabi.ae>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/28 19:53:19 by aalkaff           #+#    #+#             */
-/*   Updated: 2026/02/15 15:20:02 by aalkaff          ###   ########.fr       */
+/*   Updated: 2026/02/15 15:23:19 by aalkaff          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,6 +83,7 @@ char			*ft_strdup(const char *s);
 void			*ft_memchr(const void *ptr, int c, size_t len);
 char			*ft_strchr(const char *s, int c);
 char			*ft_strrchr(const char *s, int c);
+char			*ft_strchrnul(const char *s, int c);
 char			*ft_strnstr(const char *haystack, const char *needle, size_t n);
 size_t			ft_strlen(const char *s);
 size_t			ft_strnlen(const char *s, size_t n);

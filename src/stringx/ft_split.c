@@ -6,23 +6,14 @@
 /*   By: aalkaff <aalkaff@student.42abudhabi.ae>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/29 21:30:12 by aalkaff           #+#    #+#             */
-/*   Updated: 2026/02/15 15:19:36 by aalkaff          ###   ########.fr       */
+/*   Updated: 2026/02/15 15:23:05 by aalkaff          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include <stdlib.h>	// malloc, free
 
-/**
- * @internal
- * @brief Returns a pointer to the first occurrence of @p c in @p s
- * or to the end of @p s if it was not found.
- * @param s The string to search in.
- * @param c The character to search for.
- * @returns A pointer to the first occurrence of @p c in @p s
- * or to the end of @p s if it was not found.
- */
-static char	*ft_strchrnul(const char *s, int c)
+char	*ft_strchrnul(const char *s, int c)
 {
 	while (*s)
 	{
@@ -33,14 +24,6 @@ static char	*ft_strchrnul(const char *s, int c)
 	return ((char *)s);
 }
 
-/**
- * @internal
- * @brief Counts the number of words in @p s, delimited by @p c
- * or by the end of @p s.
- * @param s The string to split.
- * @param c The delimiter character.
- * @returns The number of words in @p s.
- */
 size_t	ft_count_words(const char *s, char c)
 {
 	size_t		nwords;
