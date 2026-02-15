@@ -6,7 +6,7 @@
 /*   By: aalkaff <aalkaff@student.42abudhabi.ae>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/28 19:53:19 by aalkaff           #+#    #+#             */
-/*   Updated: 2026/02/06 14:40:21 by aalkaff          ###   ########.fr       */
+/*   Updated: 2026/02/15 15:18:20 by aalkaff          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,6 @@ int				ft_isprint(int c);
 int				ft_isascii(int c);
 int				ft_toupper(int c);
 int				ft_tolower(int c);
-
 
 /* Returns the next power of two greater than or equal to N. */
 size_t			next_power_of_two(size_t n);
